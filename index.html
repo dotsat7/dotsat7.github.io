@@ -3,97 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dotSat Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <title>dotSat7 - AI Automation Services</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .language-selector {
+            transition: all 0.3s ease;
+        }
+        .language-selector:hover {
+            transform: scale(1.05);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(167, 119, 227, 0.5);
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                      <div class="flex-shrink-0 flex items-center">
+                          <!--<img src="https://dotsat7.com/images/dotsat7_logo.jpeg" alt="dotSat7 Logo" class="h-30 w-30 rounded-full">-->
+                      </div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">dotSat7</a>      
-      <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-2" href="#signup">Sign Up</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  
-  <!-- Hero Section -->
-  <section class="bg-light py-5 text-center">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Bem vindo a dotSat7</h1>
-
-      <p class="lead mb-4">Em breve solucoes inovadoras para o seu negocio.</p>
-    </div>
-    <img src="images/dotsat7_logo.jpeg" alt="Download" class="img-fluid" style="max-width: 200px;">
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="py-5">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow-sm rounded bg-white h-100">
-            <div class="mb-3 text-primary"><i class="bi bi-lightning-charge fs-1"></i></div>
-            <h5>AI</h5>
-            <p>Automacao inteligente para o seu negocio.</p>
-          </div>
+                        <span class="text-2xl font-bold text-black-600">dotSat7</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    <div class="flex space-x-2">
+                        <button onclick="changeLanguage('en')" class="language-selector px-3 py-1 rounded-full bg-gray-100 text-sm font-medium flex items-center">
+                            <span class="mr-1">🇺🇸</span>
+                        </button>
+                        <button onclick="changeLanguage('pt')" class="language-selector px-3 py-1 rounded-full bg-gray-100 text-sm font-medium flex items-center">
+                            <span class="mr-1">🇧🇷</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow-sm rounded bg-white h-100">
-            <div class="mb-3 text-success"><i class="bi bi-shield-check fs-1"></i></div>
-            <h5>Retorno de Investimento</h5>
-            <p>Seu sucesso é nossa prioridade.</p>
-          </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-20 bg-white pt-16">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50">Services</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50">About</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50">Contact</a>
+            <div class="flex space-x-2 px-3 py-2">
+                <button onclick="changeLanguage('en')" class="language-selector px-3 py-1 rounded-full bg-gray-100 text-sm font-medium flex items-center">
+                    <span class="mr-1">🇺🇸</span> EN
+                </button>
+                <button onclick="changeLanguage('pt')" class="language-selector px-3 py-1 rounded-full bg-gray-100 text-sm font-medium flex items-center">
+                    <span class="mr-1">🇧🇷</span> PT
+                </button>
+            </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="p-4 shadow-sm rounded bg-white h-100">
-            <div class="mb-3 text-danger"><i class="bi bi-heart fs-1"></i></div>
-            <h5>Seu negocio nossa missao</h5>
-            <p>Desenvolvido para ser simples e agradável para todos.</p>
-          </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 glow-text" data-i18n="hero_title">Transform Your Business with AI Automation</h1>
+                    <p class="text-xl mb-8 opacity-90" data-i18n="hero_subtitle">Leverage cutting-edge artificial intelligence to streamline operations and boost productivity.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300" data-i18n="hero_cta1">Get Started</a>
+                        <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-lg font-medium transition duration-300" data-i18n="hero_cta2">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="http://static.photos/technology/1024x576/7" alt="AI Automation" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-3">Entre em Contato</h2>
-      <p class="lead">Tem perguntas ou precisa de ajuda? Entre em contato conosco a qualquer momento.</p>
-      <p>
-        <a href="mailto:dotsat7@gmail.com" class="btn btn-outline-primary btn-lg">
-          <i class="bi bi-envelope-fill me-2"></i>Email Us
-        </a>
-      </p>
-      <p class="text-muted">dotsat7@gmail.com</p>
-    </div>
-  </section>  
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="services_title">Our AI Automation Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="services_subtitle">We provide comprehensive AI solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="cpu" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="service1_title">Process Automation</h3>
+                    <p class="text-gray-600" data-i18n="service1_desc">Automate repetitive tasks with intelligent algorithms that learn and improve over time.</p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="bar-chart-2" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="service2_title">Data Analytics</h3>
+                    <p class="text-gray-600" data-i18n="service2_desc">Extract valuable insights from your data with our advanced machine learning models.</p>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="message-circle" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="service3_title">Chatbots & NLP</h3>
+                    <p class="text-gray-600" data-i18n="service3_desc">Enhance customer experience with natural language processing and conversational AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/office/1024x576/12" alt="About dotSat7" class="rounded-xl shadow-xl">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6" data-i18n="about_title">Why Choose dotSat7</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="about_desc1">At dotSat7, we combine deep technical expertise with business acumen to deliver AI solutions that drive real results. Our team of data scientists and engineers are passionate about pushing the boundaries of what's possible with automation.</p>
+                    <p class="text-gray-600 mb-8" data-i18n="about_desc2">We've helped businesses across industries reduce costs, improve efficiency, and unlock new opportunities through intelligent automation.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                            <span class="font-medium" data-i18n="about_feature1">Custom Solutions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+                            <span class="font-medium" data-i18n="about_feature2">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="testimonials_title">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="testimonials_subtitle">Trusted by businesses worldwide</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/1" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="testimonial1_role">CEO, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-i18n="testimonial1_text">"dotSat7 transformed our operations with their AI automation. We've seen a 40% increase in productivity since implementation."</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/2" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Mendez</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="testimonial2_role">CTO, FinServe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-i18n="testimonial2_text">"The data analytics solution from dotSat7 gave us insights we never knew were possible. Game-changing for our business."</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/3" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Patel</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="testimonial3_role">Director, RetailPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic" data-i18n="testimonial3_text">"Their chatbot implementation reduced our customer service costs by 60% while improving satisfaction scores."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  
-  <!-- Footer -->
-  <footer class="py-4 bg-dark text-white text-center">
-    <p class="mb-0">&copy; 2025 dotSat 7. All rights reserved.</p>
-    <a
-  </footer>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="contact_title">Ready to Automate?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="contact_subtitle">Get in touch to discuss how AI can transform your business</p>
+            </div>
+            
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_name">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_message">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-i18n="contact_submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-xl font-bold mb-6" data-i18n="contact_info">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i data-feather="mail" class="text-purple-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium" data-i18n="contact_email_title">Email</h4>
+                                    <p class="text-gray-600">faleconosco@dotsat7.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="phone" class="text-purple-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium" data-i18n="contact_phone_title">Phone</h4>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="map-pin" class="text-purple-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium" data-i18n="contact_address_title">Address</h4>
+                                    <p class="text-gray-600">123 Automation Ave, Suite 100<br>San Francisco, CA 94107</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmZ8g5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5z5G5" crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:justify-between md:items-center">
+                <div class="mb-8 md:mb-0">
+                    <span class="text-2xl font-bold text-white">dotSat7</span>
+                    <p class="mt-2 text-gray-400 max-w-md" data-i18n="footer_desc">Pioneering AI automation solutions for the modern enterprise.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4" data-i18n="footer_company">Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_about">About</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_services">Services</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4" data-i18n="footer_legal">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_privacy">Privacy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_terms">Terms</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-i18n="footer_cookies">Cookies</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4" data-i18n="footer_connect">Connect</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i data-feather="facebook"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                                <i data-feather="github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm" data-i18n="footer_copyright">© 2023 dotSat7. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <button onclick="changeLanguage('en')" class="text-gray-400 hover:text-white text-sm flex items-center">
+                        <span class="mr-1">🇺🇸</span> English
+                    </button>
+                    <button onclick="changeLanguage('pt')" class="text-gray-400 hover:text-white text-sm flex items-center">
+                        <span class="mr-1">🇧🇷</span> Português
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            feather.replace();
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Language translations
+        const translations = {
+            en: {
+                // Navigation
+                "hero_title": "Transform Your Business with AI Automation",
+                "hero_subtitle": "Leverage cutting-edge artificial intelligence to streamline operations and boost productivity.",
+                "hero_cta1": "Get Started",
+                "hero_cta2": "Learn More",
+                
+                // Services
+                "services_title": "Our AI Automation Services",
+                "services_subtitle": "We provide comprehensive AI solutions tailored to your business needs",
+                "service1_title": "Process Automation",
+                "service1_desc": "Automate repetitive tasks with intelligent algorithms that learn and improve over time.",
+                "service2_title": "Data Analytics",
+                "service2_desc": "Extract valuable insights from your data with our advanced machine learning models.",
+                "service3_title": "Chatbots & NLP",
+                "service3_desc": "Enhance customer experience with natural language processing and conversational AI.",
+                
+                // About
+                "about_title": "Why Choose dotSat7",
+                "about_desc1": "At dotSat7, we combine deep technical expertise with business acumen to deliver AI solutions that drive real results. Our team of data scientists and engineers are passionate about pushing the boundaries of what's possible with automation.",
+                "about_desc2": "We've helped businesses across industries reduce costs, improve efficiency, and unlock new opportunities through intelligent automation.",
+                "about_feature1": "Custom Solutions",
+                "about_feature2": "24/7 Support",
+                
+                // Testimonials
+                "testimonials_title": "What Our Clients Say",
+                "testimonials_subtitle": "Trusted by businesses worldwide",
+                "testimonial1_role": "CEO, TechCorp",
+                "testimonial1_text": "\"dotSat7 transformed our operations with their AI automation. We've seen a 40% increase in productivity since implementation.\"",
+                "testimonial2_role": "CTO, FinServe",
+                "testimonial2_text": "\"The data analytics solution from dotSat7 gave us insights we never knew were possible. Game-changing for our business.\"",
+                "testimonial3_role": "Director, RetailPlus",
+                "testimonial3_text": "\"Their chatbot implementation reduced our customer service costs by 60% while improving satisfaction scores.\"",
+                
+                // Contact
+                "contact_title": "Ready to Automate?",
+                "contact_subtitle": "Get in touch to discuss how AI can transform your business",
+                "contact_name": "Name",
+                "contact_email": "Email",
+                "contact_message": "Message",
+                "contact_submit": "Send Message",
+                "contact_info": "Contact Information",
+                "contact_email_title": "Email",
+                "contact_phone_title": "Phone",
+                "contact_address_title": "Address",
+                
+                // Footer
+                "footer_desc": "Pioneering AI automation solutions for the modern enterprise.",
+                "footer_company": "Company",
+                "footer_about": "About",
+                "footer_services": "Services",
+                "footer_contact": "Contact",
+                "footer_legal": "Legal",
+                "footer_privacy": "Privacy",
+                "footer_terms": "Terms",
+                "footer_cookies": "Cookies",
+                "footer_connect": "Connect",
+                "footer_copyright": "© 2023 dotSat7. All rights reserved."
+            },
+            pt: {
+                // Navigation
+                "hero_title": "Transforme Seu Negócio com Automação de IA",
+                "hero_subtitle": "Aproveite a inteligência artificial de ponta para otimizar operações e aumentar a produtividade.",
+                "hero_cta1": "Começar Agora",
+                "hero_cta2": "Saiba Mais",
+                
+                // Services
+                "services_title": "Nossos Serviços de Automação com IA",
+                "services_subtitle": "Oferecemos soluções abrangentes de IA personalizadas para suas necessidades",
+                "service1_title": "Automação de Processos",
+                "service1_desc": "Automatize tarefas repetitivas com algoritmos inteligentes que aprendem e melhoram com o tempo.",
+                "service2_title": "Análise de Dados",
+                "service2_desc": "Extraia insights valiosos de seus dados com nossos modelos avançados de aprendizado de máquina.",
+                "service3_title": "Chatbots & PLN",
+                "service3_desc": "Melhore a experiência do cliente com processamento de linguagem natural e IA conversacional.",
+                
+                // About
+                "about_title": "Por Que Escolher a dotSat7",
+                "about_desc1": "Na dotSat7, combinamos expertise técnica profunda com conhecimento de negócios para entregar soluções de IA que geram resultados reais. Nossa equipe de cientistas de dados e engenheiros é apaixonada por expandir os limites do que é possível com automação.",
+                "about_desc2": "Ajudamos empresas em diversos setores a reduzir custos, melhorar a eficiência e desbloquear novas oportunidades através da automação inteligente.",
+                "about_feature1": "Soluções Personalizadas",
+                "about_feature2": "Suporte 24/7",
+                
+                // Testimonials
+                "testimonials_title": "O Que Nossos Clientes Dizem",
+                "testimonials_subtitle": "Confiado por empresas em todo o mundo",
+                "testimonial1_role": "CEO, TechCorp",
+                "testimonial1_text": "\"A dotSat7 transformou nossas operações com sua automação de IA. Vimos um aumento de 40% na produtividade desde a implementação.\"",
+                "testimonial2_role": "CTO, FinServe",
+                "testimonial2_text": "\"A solução de análise de dados da dotSat7 nos deu insights que nunca imaginamos ser possíveis. Mudou o jogo para nosso negócio.\"",
+                "testimonial3_role": "Diretora, RetailPlus",
+                "testimonial3_text": "\"A implementação do chatbot deles reduziu nossos custos de atendimento ao cliente em 60% enquanto melhorou as notas de satisfação.\"",
+                
+                // Contact
+                "contact_title": "Pronto para Automatizar?",
+                "contact_subtitle": "Entre em contato para discutir como a IA pode transformar seu negócio",
+                "contact_name": "Nome",
+                "contact_email": "Email",
+                "contact_message": "Mensagem",
+                "contact_submit": "Enviar Mensagem",
+                "contact_info": "Informações de Contato",
+                "contact_email_title": "Email",
+                "contact_phone_title": "Telefone",
+                "contact_address_title": "Endereço",
+                
+                // Footer
+                "footer_desc": "Soluções pioneiras em automação de IA para a empresa moderna.",
+                "footer_company": "Empresa",
+                "footer_about": "Sobre",
+                "footer_services": "Serviços",
+                "footer_contact": "Contato",
+                "footer_legal": "Legal",
+                "footer_privacy": "Privacidade",
+                "footer_terms": "Termos",
+                "footer_cookies": "Cookies",
+                "footer_connect": "Conectar",
+                "footer_copyright": "© 2023 dotSat7. Todos os direitos reservados."
+            }
+        };
+
+        // Language change function
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update active language button
+            document.querySelectorAll('.language-selector').forEach(button => {
+                button.classList.remove('bg-purple-600', 'text-white');
+                button.classList.add('bg-gray-100');
+            });
+            
+            if (lang === 'en') {
+                document.querySelector('.language-selector:nth-child(1)').classList.add('bg-purple-600', 'text-white');
+                document.querySelector('.language-selector:nth-child(1)').classList.remove('bg-gray-100');
+            } else {
+                document.querySelector('.language-selector:nth-child(2)').classList.add('bg-purple-600', 'text-white');
+                document.querySelector('.language-selector:nth-child(2)').classList.remove('bg-gray-100');
+            }
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Initialize with preferred language or default to English
+        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        changeLanguage(preferredLanguage);
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
 </body>
 </html>
