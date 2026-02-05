@@ -154,6 +154,8 @@
             animation-delay: 4s;
         }
     </style>
+    <!-- Calendly Widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 
 <body class="font-sans antialiased bg-slate-900 text-slate-50 selection:bg-purple-500 selection:text-white">
@@ -554,10 +556,14 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Case Study 1 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500"
-                    data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500 cursor-pointer group"
+                    data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-case="case1"
+                    data-title="E-commerce Automated Support"
+                    data-desc="We implemented a Typebot agent integrated with Shopify to handle 60% of Tier 1 support queries. The bot answers shipping questions, processes returns, and recommends products, escalating only complex issues to human agents."
+                    data-image="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
-                        <div class="p-3 bg-purple-900/40 rounded-lg text-purple-400">
+                        <div
+                            class="p-3 bg-purple-900/40 rounded-lg text-purple-400 group-hover:scale-110 transition-transform">
                             <i data-feather="shopping-cart" class="w-6 h-6"></i>
                         </div>
                         <h4 class="font-bold text-white text-lg ml-4">E-commerce</h4>
@@ -574,10 +580,14 @@
                 </div>
 
                 <!-- Case Study 2 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500"
-                    data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500 cursor-pointer group"
+                    data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-case="case2"
+                    data-title="Logistics Invoice Pipeline"
+                    data-desc="A complete n8n workflow that monitors email inboxes for invoices, uses OCR to extract data, validates it against POs, and automatically uploads it to the ERP system."
+                    data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
-                        <div class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400">
+                        <div
+                            class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform">
                             <i data-feather="truck" class="w-6 h-6"></i>
                         </div>
                         <h4 class="font-bold text-white text-lg ml-4">Logistics</h4>
@@ -594,10 +604,14 @@
                 </div>
 
                 <!-- Case Study 3 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500"
-                    data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500 cursor-pointer group"
+                    data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-case="case3"
+                    data-title="SaaS Lead Qualification"
+                    data-desc="An AI sales agent embedded on the website that engages visitors 24/7, qualifies them based on budget and need, and directly books meetings into the sales team's calendar."
+                    data-image="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
-                        <div class="p-3 bg-pink-900/40 rounded-lg text-pink-400">
+                        <div
+                            class="p-3 bg-pink-900/40 rounded-lg text-pink-400 group-hover:scale-110 transition-transform">
                             <i data-feather="users" class="w-6 h-6"></i>
                         </div>
                         <h4 class="font-bold text-white text-lg ml-4">SaaS B2B</h4>
@@ -615,6 +629,117 @@
             </div>
         </div>
     </section>
+
+    <!-- ROI Calculator Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="roi_title">Calculate Your Savings</h2>
+                <p class="text-xl text-slate-400" data-i18n="roi_subtitle">See how much manual work is costing you.</p>
+            </div>
+
+            <div class="bg-slate-800/60 p-8 rounded-2xl border border-slate-700 backdrop-blur-md shadow-xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Inputs -->
+                    <div class="space-y-8">
+                        <!-- Hours Slider -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-slate-300 font-medium" data-i18n="roi_label_hours">Weekly Manual
+                                    Hours</label>
+                                <span id="hours-val" class="text-purple-400 font-bold">10 h</span>
+                            </div>
+                            <input type="range" id="hours-input" min="1" max="100" value="10"
+                                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-purple-500 hover:accent-purple-400 transition-colors">
+                            <p class="text-xs text-slate-500 mt-2" data-i18n="roi_desc_hours">Time spent on repetitive
+                                tasks per week.</p>
+                        </div>
+
+                        <!-- Rate Slider -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-slate-300 font-medium" data-i18n="roi_label_rate">Hourly Cost</label>
+                                <span id="rate-val" class="text-cyan-400 font-bold">$50</span>
+                            </div>
+                            <input type="range" id="rate-input" min="15" max="200" value="50" step="5"
+                                class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500 hover:accent-cyan-400 transition-colors">
+                            <p class="text-xs text-slate-500 mt-2" data-i18n="roi_desc_rate">Average hourly rate of
+                                employee(s) doing the work.</p>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="text-center md:text-left bg-slate-900/50 p-6 rounded-xl border border-slate-700/50">
+                        <p class="text-slate-400 text-sm uppercase tracking-wider mb-2" data-i18n="roi_result_title">
+                            Annual Cost of Manual Work</p>
+                        <div class="text-4xl md:text-5xl font-bold text-white mb-2 glow-text">
+                            <span id="total-cost">26,000</span>
+                        </div>
+                        <p class="text-green-400 text-sm font-medium flex items-center justify-center md:justify-start">
+                            <i data-feather="trending-up" class="w-4 h-4 mr-1"></i> <span
+                                data-i18n="roi_savings_label">You could save up to</span> <span id="savings-val"
+                                class="ml-1">20,800</span>
+                        </p>
+                        <div class="mt-6">
+                            <a href="#contact"
+                                class="inline-block w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-medium transition-colors text-center text-sm"
+                                data-i18n="roi_cta">
+                                Stop Wasting Money &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ROI Calculator Logic
+        const hoursInput = document.getElementById('hours-input');
+        const rateInput = document.getElementById('rate-input');
+        const hoursVal = document.getElementById('hours-val');
+        const rateVal = document.getElementById('rate-val');
+        const totalCostEl = document.getElementById('total-cost');
+        const savingsValEl = document.getElementById('savings-val');
+
+        function calculateROI() {
+            if (!hoursInput || !rateInput) return;
+
+            const hours = parseInt(hoursInput.value);
+            const rate = parseInt(rateInput.value);
+
+            // Formula: Weekly Hours * Rate * 52 Weeks
+            const annualCost = hours * rate * 52;
+            const potentialSavings = annualCost * 0.80; // Assuming 80% efficiency gain
+
+            // Determine locale and currency based on current language
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            const locale = currentLang === 'pt' ? 'pt-BR' : 'en-US';
+            const currency = currentLang === 'pt' ? 'BRL' : 'USD';
+
+            const moneyFormatter = new Intl.NumberFormat(locale, {
+                style: 'currency',
+                currency: currency,
+                maximumFractionDigits: 0
+            });
+
+            // Update UI
+            hoursVal.textContent = `${hours} h`;
+            rateVal.textContent = moneyFormatter.format(rate);
+            totalCostEl.textContent = moneyFormatter.format(annualCost);
+            savingsValEl.textContent = moneyFormatter.format(potentialSavings);
+        }
+
+        if (hoursInput && rateInput) {
+            hoursInput.addEventListener('input', calculateROI);
+            rateInput.addEventListener('input', calculateROI);
+
+            // Initialize on load
+            calculateROI();
+        }
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
@@ -643,11 +768,12 @@
 
                         <!-- Secondary CTA (Booking) -->
                         <div class="mb-8">
-                            <a href="#"
+                            <button
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dotsat7/30min'});return false;"
                                 class="flex items-center justify-center w-full bg-slate-700/50 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-lg font-medium transition-colors border border-slate-600 hover:border-slate-500">
                                 <i data-feather="calendar" class="mr-2 w-5 h-5 text-purple-400"></i>
                                 <span data-i18n="contact_book">Book a Discovery Call</span>
-                            </a>
+                            </button>
                         </div>
 
                         <div class="flex flex-col items-center space-y-2 pt-6 border-t border-slate-700/50">
@@ -830,7 +956,26 @@
                 "footer_terms": "Terms",
                 "footer_cookies": "Cookies",
                 "footer_connect": "Connect",
-                "footer_copyright": "© 2025 dotsat7. All rights reserved."
+                "footer_copyright": "© 2025 dotsat7. All rights reserved.",
+
+                // ROI Calculator
+                "roi_title": "Calculate Your Savings",
+                "roi_subtitle": "See how much manual work is costing you.",
+                "roi_label_hours": "Weekly Manual Hours",
+                "roi_desc_hours": "Time spent on repetitive tasks per week.",
+                "roi_label_rate": "Hourly Cost",
+                "roi_desc_rate": "Average hourly rate of employee(s) doing the work.",
+                "roi_result_title": "Annual Cost of Manual Work",
+                "roi_savings_label": "You could save up to",
+                "roi_cta": "Stop Wasting Money →",
+
+                // Modals
+                "case1_modal_title": "Automated E-commerce Support",
+                "case1_modal_desc": "We implemented a Typebot agent integrated with Shopify to handle 60% of Tier 1 support queries. The bot answers shipping questions, processes returns, and recommends products, escalating only complex issues to human agents.",
+                "case2_modal_title": "Logistics Invoice Pipeline",
+                "case2_modal_desc": "A complete n8n workflow that monitors email inboxes for invoices, uses OCR to extract data, validates it against POs, and automatically uploads it to the ERP system.",
+                "case3_modal_title": "SaaS Lead Qualification",
+                "case3_modal_desc": "An AI sales agent embedded on the website that engages visitors 24/7, qualifies them based on budget and need, and directly books meetings into the sales team's calendar."
             },
             pt: {
                 // Navigation
@@ -900,7 +1045,26 @@
                 "footer_terms": "Termos",
                 "footer_cookies": "Cookies",
                 "footer_connect": "Conectar",
-                "footer_copyright": "© 2025 dotsat7. Todos os direitos reservados."
+                "footer_copyright": "© 2025 dotsat7. Todos os direitos reservados.",
+
+                // ROI Calculator
+                "roi_title": "Calcule Sua Economia",
+                "roi_subtitle": "Veja quanto o trabalho manual está custando para você.",
+                "roi_label_hours": "Horas Manuais Semanais",
+                "roi_desc_hours": "Tempo gasto em tarefas repetitivas por semana.",
+                "roi_label_rate": "Custo Por Hora",
+                "roi_desc_rate": "Valor hora médio do(s) funcionário(s).",
+                "roi_result_title": "Custo Anual do Trabalho Manual",
+                "roi_savings_label": "Você pode economizar até",
+                "roi_cta": "Pare de Perder Dinheiro →",
+
+                // Modals
+                "case1_modal_title": "Suporte Automatizado E-commerce",
+                "case1_modal_desc": "Implementamos um agente Typebot integrado ao Shopify para lidar com 60% das dúvidas de Nível 1. O bot responde perguntas sobre envios, processa devoluções e recomenda produtos, escalando apenas problemas complexos para agentes humanos.",
+                "case2_modal_title": "Pipeline de Faturas Logísticas",
+                "case2_modal_desc": "Um workflow n8n completo que monitora e-mails em busca de faturas, usa OCR para extrair dados, valida contra pedidos de compra (POs) e faz upload automático no sistema ERP.",
+                "case3_modal_title": "Qualificação de Leads SaaS",
+                "case3_modal_desc": "Um agente de vendas de IA incorporado ao site que engaja visitantes 24/7, qualifica-os com base em orçamento e necessidade, e agendou reuniões diretamente no calendário da equipe de vendas."
             }
         };
 
@@ -941,6 +1105,11 @@
 
             // Store language preference
             localStorage.setItem('preferredLanguage', lang);
+
+            // Trigger ROI calculator update if function exists
+            if (typeof calculateROI === 'function') {
+                calculateROI();
+            }
         }
 
         // Initialize with preferred language or default to English
@@ -1012,9 +1181,141 @@
         }
     </script>
 
-    <!-- Back to Top Button -->
+    <!-- Project Gallery Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop">
+        </div>
+
+        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
+            <!-- Modal Panel -->
+            <div class="relative transform overflow-hidden rounded-2xl bg-slate-800 border border-slate-700 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                id="modal-panel">
+
+                <!-- Close Button -->
+                <button type="button" onclick="closeModal()"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors z-10 bg-slate-900/50 p-2 rounded-full backdrop-blur-sm">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Image -->
+                <div class="relative h-64 sm:h-80 bg-slate-900">
+                    <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-cover opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="px-6 py-6 sm:px-10 sm:py-8">
+                    <h3 class="text-2xl font-bold leading-6 text-white mb-4" id="modal-title">Project Title</h3>
+                    <div class="mt-2">
+                        <p class="text-slate-300 text-lg leading-relaxed" id="modal-desc">
+                            Project description goes here.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex justify-end">
+                        <button type="button" onclick="closeModal()"
+                            class="inline-flex justify-center rounded-lg border border-slate-600 bg-slate-800 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition-all">
+                            Close Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('project-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const panel = document.getElementById('modal-panel');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalImage = document.getElementById('modal-image');
+
+        function openModal(element) {
+            // Get Case ID and Image
+            const caseId = element.getAttribute('data-case');
+            const imageUrl = element.getAttribute('data-image');
+
+            // Get Current Language
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+
+            // Default content from attributes
+            let title = element.getAttribute('data-title') || "Project Title";
+            let desc = element.getAttribute('data-desc') || "Project description.";
+
+            // If we have a case ID, try to get localized strings
+            if (caseId) {
+                const titleKey = `${caseId}_modal_title`;
+                const descKey = `${caseId}_modal_desc`;
+
+                // Using window.translations to ensure we access the global object
+                // Fallback priority: Current Lang -> English -> Data Attributes
+                const t = window.translations || translations;
+
+                if (t && t[lang] && t[lang][titleKey]) {
+                    title = t[lang][titleKey];
+                } else if (t && t['en'] && t['en'][titleKey]) {
+                    title = t['en'][titleKey];
+                }
+
+                if (t && t[lang] && t[lang][descKey]) {
+                    desc = t[lang][descKey];
+                } else if (t && t['en'] && t['en'][descKey]) {
+                    desc = t['en'][descKey];
+                }
+            }
+
+            // Populate Content
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalImage.src = imageUrl;
+
+            // Show Modal
+            modal.classList.remove('hidden');
+
+            // Animation Textures
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            }, 10);
+
+            // Disable body scroll
+            document.body.style.overflow = 'hidden';
+
+            // Refresh icons (for close button)
+            feather.replace();
+        }
+
+        function closeModal() {
+            // Reverse Animation
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scroll
+            }, 300); // Wait for transition duration
+        }
+
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.closest('#modal-backdrop')) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
     <button id="back-to-top"
-        class="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible translate-y-10 z-50">
+        class="fixed bottom-8 left-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible translate-y-10 z-50">
         <i data-feather="arrow-up" class="w-6 h-6"></i>
     </button>
 
@@ -1072,6 +1373,30 @@
             type();
         }
     </script>
+    <script type="module">
+        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
+
+        Typebot.initBubble({
+            typebot: "faq-63r244g",
+            previewMessage: {
+                message: "Hi! Need help automating?",
+                // autoShowDelay: 5000,
+                avatarUrl: "images/dotsat_logo.png",
+            },
+            theme: {
+                button: {
+                    backgroundColor: "#9333ea", // purple-600
+                    customIconSrc: "https://api.iconify.design/lucide:bot.svg?color=%23ffffff", // AI Robot Icon (White)
+                    size: "medium",
+                },
+                chatWindow: {
+                    backgroundColor: "#0f172a", // slate-900 for dark mode consistency
+                },
+            },
+        });
+    </script>
+    <!-- Calendly Widget JS -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 
 </html>
