@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dotsat7 - AI Automation Services</title>
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description"
+        content="Intelligent automation, chatbots, and AI solutions for businesses. We build scalable, low-risk n8n workflows and Python backends.">
+    <meta property="og:title" content="dotsat7 | Intelligent AI Automation">
+    <meta property="og:description"
+        content="Transform your business operations with custom chatbots, n8n workflows, and AI agents.">
+    <meta property="og:image" content="https://dotsat7.github.io/images/hero_ai_network.png">
+    <meta property="og:url" content="https://dotsat7.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://dotsat7.github.io/images/hero_ai_network.png">
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -43,6 +54,105 @@
         .neon-border {
             box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
         }
+
+        /* 1. CSS Grid Background */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* 2. Holographic Card Border */
+        .holo-card {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .holo-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem;
+            padding: 2px;
+            background: linear-gradient(45deg, transparent 40%, #a855f7, #06b6d4, transparent 60%);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .holo-card:hover::before {
+            opacity: 1;
+            animation: holo-spin 2s linear infinite;
+        }
+
+        @keyframes holo-spin {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 3. Typewriter Cursor */
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* 4. Ambient Orbs */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
     </style>
 </head>
 
@@ -62,11 +172,14 @@
                     </div>
                     <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
                         <a href="#services"
-                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_services">Services</a>
                         <a href="#about"
-                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_about">About</a>
                         <a href="#contact"
-                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_contact">Contact</a>
                         <div class="flex space-x-2">
                             <button onclick="changeLanguage('en')"
                                 class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700">
@@ -92,11 +205,14 @@
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-20 bg-slate-900/95 backdrop-blur-xl pt-16">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#services"
-                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors">Services</a>
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_services">Services</a>
             <a href="#about"
-                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors">About</a>
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_about">About</a>
             <a href="#contact"
-                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors">Contact</a>
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_contact">Contact</a>
             <div class="flex space-x-2 px-3 py-2">
                 <button onclick="changeLanguage('en')"
                     class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700 text-slate-300">
@@ -116,172 +232,224 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400"
-                        data-i18n="hero_title">Deploy Autonomous
-                        AI Agents</h1>
-                    <p class="text-xl mb-8 text-slate-300 leading-relaxed" data-i18n="hero_subtitle">Scale your
-                        workforce with intelligent digital workers that run 24/7. From operations to customer support,
-                        we
-                        build the agents that power your business.</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 leading-tight"
+                        data-i18n="hero_title">
+                        Intelligent <span id="typewriter-text"
+                            class="text-white typewriter-cursor">Automation</span><br> for your business.
+                    </h1>
+                    <p class="text-xl mb-8 text-slate-300 leading-relaxed" data-i18n="hero_subtitle">We develop
+                        chatbots, integrations, and automated workflows focused on simplicity, speed, low risk, and high
+                        predictability.</p>
                     <div class="flex space-x-4">
                         <a href="#contact"
                             class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 shadow-lg shadow-purple-500/30 ring-1 ring-purple-500"
-                            data-i18n="hero_cta1">Deploy Agents</a>
-                        <a href="#solutions"
-                            class="border border-slate-500 text-slate-300 hover:bg-slate-800 hover:text-white px-6 py-3 rounded-lg font-medium transition duration-300 backdrop-blur-sm"
-                            data-i18n="hero_cta2">View Solutions</a>
+                            data-i18n="hero_cta">Talk to an expert</a>
                     </div>
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <img src="http://static.photos/technology/1024x576/7" alt="AI Automation"
-                        class="rounded-xl shadow-2xl">
+                    <img src="images/hero_ai_network.png" alt="AI Automation Network"
+                        class="rounded-xl shadow-2xl border border-slate-700/50 hover:shadow-purple-500/20 transition duration-500">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-purple-400 mb-6 uppercase tracking-wider" data-i18n="value_prop_title">
+                What We Do</h2>
+            <p class="text-xl text-slate-300 leading-relaxed" data-i18n="value_prop_desc">
+                dotsat7 specializes in automation, integrations, and practical AI applications for companies seeking
+                efficiency, scale, and operational cost reduction.
+                <br><br>
+                We work with closed-scope projects, fast execution, and simple architecture, ensuring secure,
+                predictable, and easy-to-maintain deliveries.
+            </p>
+
+            <!-- Visual Workflow Diagram -->
+            <div
+                class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-4 opacity-90">
+                <!-- User -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-slate-700 shadow-lg mb-2">
+                        <i data-feather="user" class="text-slate-400 w-8 h-8"></i>
+                    </div>
+                    <span class="text-sm text-slate-400 font-medium">User</span>
+                </div>
+
+                <!-- Arrow -->
+                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
+
+                <!-- Chatbot -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-purple-500/30 shadow-lg shadow-purple-500/20 mb-2">
+                        <i data-feather="message-circle" class="text-purple-400 w-8 h-8"></i>
+                    </div>
+                    <span class="text-sm text-purple-400 font-medium">AI Agent</span>
+                </div>
+
+                <!-- Arrow -->
+                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
+
+                <!-- Automation -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-500/30 shadow-lg shadow-cyan-500/20 mb-2">
+                        <i data-feather="cpu" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <span class="text-sm text-cyan-400 font-medium">n8n Workflow</span>
+                </div>
+
+                <!-- Arrow -->
+                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
+
+                <!-- Results -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-green-500/30 shadow-lg shadow-green-500/20 mb-2">
+                        <i data-feather="check-circle" class="text-green-400 w-8 h-8"></i>
+                    </div>
+                    <span class="text-sm text-green-400 font-medium">Results</span>
+                </div>
+            </div>
+            </p> <!-- Close p tag correctly or restructure, existing p tag closed early -->
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative">
+        <!-- Replaced broken SVG with CSS Grid -->
         <div
-            class="absolute inset-0 bg-[url('/img/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]">
+            class="absolute inset-0 bg-grid-pattern [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20">
         </div>
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="services_title">Your Digital Workforce</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="services_subtitle">Specialized AI Agents
-                    ready to join your team</p>
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="services_title">Our Solutions</h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="services_subtitle">Business process
+                    automation and intelligent systems</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-purple-500/50"
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card holo-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-purple-500/0"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
                         class="w-16 h-16 bg-slate-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-900/30 transition-colors">
-                        <i data-feather="cpu" class="text-purple-400 w-8 h-8"></i>
+                        <i data-feather="message-square" class="text-purple-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white group-hover:text-purple-300 transition-colors"
-                        data-i18n="service1_title">Operations Agent</h3>
-                    <p class="text-slate-400" data-i18n="service1_desc">Autonomous task handler for invoicing,
-                        scheduling, and data entry. Works 24/7 without errors.</p>
+                        data-i18n="service1_title">Intelligent Chatbots</h3>
+                    <p class="text-slate-400" data-i18n="service1_desc">Typebot, WhatsApp, and Web automation for
+                        support and sales.</p>
                 </div>
 
-                <div class="service-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-cyan-500/50"
+                <!-- Service 2 -->
+                <div class="service-card holo-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-cyan-500/0"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-16 h-16 bg-slate-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-900/30 transition-colors">
-                        <i data-feather="bar-chart-2" class="text-cyan-400 w-8 h-8"></i>
+                        <i data-feather="share-2" class="text-cyan-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white group-hover:text-cyan-300 transition-colors"
-                        data-i18n="service2_title">Analyst Agent</h3>
-                    <p class="text-slate-400" data-i18n="service2_desc">Real-time business intelligence. Monitors KPIs,
-                        generates reports, and predicts trends instantly.</p>
+                        data-i18n="service2_title">API Integrations</h3>
+                    <p class="text-slate-400" data-i18n="service2_desc">Seamless connections between your systems to
+                        unify data and actions.</p>
                 </div>
 
-                <div class="service-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-pink-500/50"
+                <!-- Service 3 -->
+                <div class="service-card holo-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-pink-500/0"
                     data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-16 h-16 bg-slate-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-900/30 transition-colors">
-                        <i data-feather="message-circle" class="text-pink-400 w-8 h-8"></i>
+                        <i data-feather="git-merge" class="text-pink-400 w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white group-hover:text-pink-300 transition-colors"
-                        data-i18n="service3_title">Support Agent</h3>
-                    <p class="text-slate-400" data-i18n="service3_desc">Empathetic, multi-lingual client support that
-                        resolves 80% of tickets autonomously.</p>
+                        data-i18n="service3_title">n8n Workflows</h3>
+                    <p class="text-slate-400" data-i18n="service3_desc">Visual orchestration of complex business
+                        processes and data flows.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="md:flex md:items-center md:space-x-12">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="text-3xl font-bold text-white mb-6" data-i18n="solutions_title">Tailored Solutions</h2>
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-900/50 text-purple-400">
-                                    <i data-feather="send"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-medium text-white" data-i18n="solution1_title">Sales Outreach
-                                </h3>
-                                <p class="mt-2 text-slate-400" data-i18n="solution1_desc">Agents that find leads,
-                                    personalize emails, and book
-                                    meetings directly to your calendar.</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-900/50 text-cyan-400">
-                                    <i data-feather="file-text"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-medium text-white" data-i18n="solution2_title">Document
-                                    Processing</h3>
-                                <p class="mt-2 text-slate-400" data-i18n="solution2_desc">Extract structured data from
-                                    PDFs, invoices, and
-                                    contracts in seconds.</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-pink-900/50 text-pink-400">
-                                    <i data-feather="code"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-medium text-white" data-i18n="solution3_title">Code Assistant
-                                </h3>
-                                <p class="mt-2 text-slate-400" data-i18n="solution3_desc">Custom dev-bots trained on
-                                    your codebase to write tests,
-                                    refactor, and document.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 mt-10 md:mt-0 relative" data-aos="fade-left">
+                <!-- Service 4 -->
+                <div class="service-card holo-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-blue-500/0"
+                    data-aos="fade-up" data-aos-delay="400">
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl blur-xl opacity-30">
+                        class="w-16 h-16 bg-slate-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900/30 transition-colors">
+                        <i data-feather="cpu" class="text-blue-400 w-8 h-8"></i>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                        alt="AI Solutions" class="relative rounded-xl shadow-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors"
+                        data-i18n="service4_title">AI Applications</h3>
+                    <p class="text-slate-400" data-i18n="service4_desc">Practical AI agents for customer service,
+                        analysis, and decision support.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card holo-card bg-slate-800/40 p-8 rounded-xl border border-slate-700/50 transition duration-300 group hover:border-emerald-500/0"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="w-16 h-16 bg-slate-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-900/30 transition-colors">
+                        <i data-feather="server" class="text-emerald-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white group-hover:text-emerald-300 transition-colors"
+                        data-i18n="service5_title">Intelligent Backends</h3>
+                    <p class="text-slate-400" data-i18n="service5_desc">Robust Python-based backends designed for scale
+                        and AI integration.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+
+
+    <!-- Differentiators Section (formerly About) -->
     <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
         <div class="max-w-7xl mx-auto">
             <div class="md:flex md:items-center md:space-x-12">
                 <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
                     <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="About dotsat7" class="rounded-xl shadow-2xl shadow-purple-900/20 border border-slate-700">
+                        alt="Why choose dotsat7"
+                        class="rounded-xl shadow-2xl shadow-purple-900/20 border border-slate-700">
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <h2 class="text-3xl font-bold text-white mb-6" data-i18n="about_title">Why Choose dotsat7</h2>
-                    <p class="text-slate-400 mb-6" data-i18n="about_desc1">At dotsat7, we combine deep technical
-                        expertise with business acumen to deliver AI solutions that drive real results. Our team of data
-                        scientists and engineers are passionate about pushing the boundaries of what's possible with
-                        automation.</p>
-                    <p class="text-slate-400 mb-8" data-i18n="about_desc2">We've helped businesses across industries
-                        reduce costs, improve efficiency, and unlock new opportunities through intelligent automation.
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center">
-                            <i data-feather="check-circle" class="text-green-500 mr-2"></i>
-                            <span class="font-medium" data-i18n="about_feature1">Custom Solutions</span>
+                    <h2 class="text-3xl font-bold text-white mb-6" data-i18n="diff_title">Why choose dotsat7?</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-medium text-white" data-i18n="diff1_title">Low Risk & High
+                                    Predictability</h4>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-feather="check-circle" class="text-green-500 mr-2"></i>
-                            <span class="font-medium" data-i18n="about_feature2">24/7 Support</span>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-medium text-white" data-i18n="diff2_title">Simple, Modular &
+                                    Scalable Architecture</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-medium text-white" data-i18n="diff3_title">Technical Projects
+                                    with Clearly Defined Scope</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-medium text-white" data-i18n="diff4_title">Fast & Secure
+                                    Delivery</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-medium text-white" data-i18n="diff5_title">Clear & Objective
+                                    Communication</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,65 +457,160 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Tech Stack Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-2xl font-bold text-slate-300 uppercase tracking-wider" data-i18n="stack_title">
+                    Technologies We Master</h2>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-80" data-aos="fade-up"
+                data-aos-delay="100">
+                <!-- n8n -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-red-400 group-hover:shadow-lg group-hover:shadow-red-500/20 transition-all duration-300">
+                        <span class="text-2xl font-bold text-red-500">n8n</span>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">n8n</span>
+                </div>
+
+                <!-- Python -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-yellow-400 group-hover:shadow-lg group-hover:shadow-yellow-500/20 transition-all duration-300">
+                        <i data-feather="code" class="text-yellow-400 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">Python</span>
+                </div>
+
+                <!-- Docker -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-blue-400 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
+                        <i data-feather="box" class="text-blue-400 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">Docker</span>
+                </div>
+
+                <!-- AWS -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-orange-400 group-hover:shadow-lg group-hover:shadow-orange-500/20 transition-all duration-300">
+                        <i data-feather="cloud" class="text-orange-400 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">AWS</span>
+                </div>
+
+                <!-- REST APIs -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-green-400 group-hover:shadow-lg group-hover:shadow-green-500/20 transition-all duration-300">
+                        <i data-feather="globe" class="text-green-400 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">REST APIs</span>
+                </div>
+
+                <!-- OpenAI / LLMs -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-purple-400 group-hover:shadow-lg group-hover:shadow-purple-500/20 transition-all duration-300">
+                        <i data-feather="cpu" class="text-purple-400 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">LLMs</span>
+                </div>
+
+                <!-- Typebot -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-600/20 transition-all duration-300">
+                        <i data-feather="message-circle" class="text-blue-500 w-8 h-8"></i>
+                    </div>
+                    <span class="mt-2 text-sm text-slate-400 font-medium">Typebot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section (Replacing Testimonials) -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-cyan-900/20 rounded-full blur-3xl"></div>
+        <!-- Ambient Orbs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-purple-900/30 rounded-full blur-3xl animate-blob">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-cyan-900/30 rounded-full blur-3xl animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-900/20 rounded-full blur-3xl animate-blob animation-delay-4000">
+        </div>
+
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="testimonials_title">What Our Clients Say
-                </h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="testimonials_subtitle">Trusted by
-                    businesses worldwide</p>
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="case_studies_title">Proven Results</h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="case_studies_subtitle">Real impact
+                    delivered to our partners.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-slate-500"
+                <!-- Case Study 1 -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-purple-500">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt="Client" class="w-full h-full object-cover">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-purple-900/40 rounded-lg text-purple-400">
+                            <i data-feather="shopping-cart" class="w-6 h-6"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white">Sarah Johnson</h4>
-                            <p class="text-purple-400 text-sm" data-i18n="testimonial1_role">CEO, TechCorp</p>
-                        </div>
+                        <h4 class="font-bold text-white text-lg ml-4">E-commerce</h4>
                     </div>
-                    <p class="text-slate-300 italic" data-i18n="testimonial1_text">"dotsat7 transformed our operations
-                        with their AI automation. We've seen a 40% increase in productivity since implementation."</p>
+                    <h5 class="text-purple-300 font-medium mb-2 uppercase text-sm tracking-wide"
+                        data-i18n="case1_title">Automated Support</h5>
+                    <p class="text-slate-300 mb-4" data-i18n="case1_desc">Implemented a Typebot agent that handles Tier
+                        1 queries instantly.</p>
+                    <div class="border-t border-slate-700 pt-4 mt-auto">
+                        <p class="text-green-400 font-bold flex items-center"><i data-feather="arrow-down-right"
+                                class="w-4 h-4 mr-2"></i> 60% <span class="text-slate-400 font-normal ml-1"
+                                data-i18n="case1_result">Ticket Volume</span></p>
+                    </div>
                 </div>
 
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-slate-500"
+                <!-- Case Study 2 -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-cyan-500">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt="Client" class="w-full h-full object-cover">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400">
+                            <i data-feather="truck" class="w-6 h-6"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white">Carlos Mendez</h4>
-                            <p class="text-cyan-400 text-sm" data-i18n="testimonial2_role">CTO, FinServe</p>
-                        </div>
+                        <h4 class="font-bold text-white text-lg ml-4">Logistics</h4>
                     </div>
-                    <p class="text-slate-300 italic" data-i18n="testimonial2_text">"The data analytics solution from
-                        dotsat7 gave us insights we never knew were possible. Game-changing for our business."</p>
+                    <h5 class="text-cyan-300 font-medium mb-2 uppercase text-sm tracking-wide" data-i18n="case2_title">
+                        Invoice Pipeline</h5>
+                    <p class="text-slate-300 mb-4" data-i18n="case2_desc">Orchestrated n8n workflow with OCR to extract
+                        and file invoice data automatically.</p>
+                    <div class="border-t border-slate-700 pt-4 mt-auto">
+                        <p class="text-green-400 font-bold flex items-center"><i data-feather="clock"
+                                class="w-4 h-4 mr-2"></i> 20h+ <span class="text-slate-400 font-normal ml-1"
+                                data-i18n="case2_result">Saved Weekly</span></p>
+                    </div>
                 </div>
 
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-slate-500"
+                <!-- Case Study 3 -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500"
                     data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 ring-2 ring-pink-500">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt="Client" class="w-full h-full object-cover">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-pink-900/40 rounded-lg text-pink-400">
+                            <i data-feather="users" class="w-6 h-6"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-white">Priya Patel</h4>
-                            <p class="text-pink-400 text-sm" data-i18n="testimonial3_role">Director, RetailPlus</p>
-                        </div>
+                        <h4 class="font-bold text-white text-lg ml-4">SaaS B2B</h4>
                     </div>
-                    <p class="text-slate-300 italic" data-i18n="testimonial3_text">"Their chatbot implementation reduced
-                        our customer service costs by 60% while improving satisfaction scores."</p>
+                    <h5 class="text-pink-300 font-medium mb-2 uppercase text-sm tracking-wide" data-i18n="case3_title">
+                        Lead Qualification</h5>
+                    <p class="text-slate-300 mb-4" data-i18n="case3_desc">AI Agent that engages website visitors,
+                        qualifies them, and books meetings.</p>
+                    <div class="border-t border-slate-700 pt-4 mt-auto">
+                        <p class="text-green-400 font-bold flex items-center"><i data-feather="trending-up"
+                                class="w-4 h-4 mr-2"></i> 40% <span class="text-slate-400 font-normal ml-1"
+                                data-i18n="case3_result">More Meetings</span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -357,23 +620,40 @@
     <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">Ready to Automate?</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="contact_subtitle">Get in touch to discuss
-                    how AI can transform your business</p>
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">Let's automate your process?
+                </h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="contact_subtitle">Talk to our team and
+                    see how we can transform your flows into intelligent, fast, and secure solutions.</p>
             </div>
 
             <div class="flex justify-center" data-aos="fade-up">
-                <div class="w-full max-w-md">
-                    <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-sm text-center">
-                        <h3 class="text-xl font-bold mb-6 text-white" data-i18n="contact_info">Contact Information</h3>
-                        <div class="flex flex-col items-center space-y-4">
-                            <div class="p-4 bg-purple-900/30 rounded-full text-purple-400 mb-2">
-                                <i data-feather="mail" class="w-8 h-8"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-slate-200 mb-1" data-i18n="contact_email_title">Email</h4>
-                                <a href="mailto:faleconosco@dotsat7.com"
-                                    class="text-lg text-purple-400 hover:text-purple-300 transition-colors">faleconosco@dotsat7.com</a>
+                <div class="w-full max-w-lg">
+                    <div
+                        class="bg-slate-800/60 p-10 rounded-2xl border border-slate-700 backdrop-blur-sm text-center shadow-xl ring-1 ring-white/5">
+
+                        <!-- Primary CTA -->
+                        <div class="mb-8">
+                            <a href="mailto:faleconosco@dotsat7.com"
+                                class="group relative flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-8 py-4 rounded-xl font-bold text-xl transition-all duration-300 shadow-lg shadow-purple-900/20 transform hover:-translate-y-1">
+                                <span data-i18n="contact_cta">Request Technical Evaluation</span>
+                                <i data-feather="arrow-right"
+                                    class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+
+                        <!-- Secondary CTA (Booking) -->
+                        <div class="mb-8">
+                            <a href="#"
+                                class="flex items-center justify-center w-full bg-slate-700/50 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-lg font-medium transition-colors border border-slate-600 hover:border-slate-500">
+                                <i data-feather="calendar" class="mr-2 w-5 h-5 text-purple-400"></i>
+                                <span data-i18n="contact_book">Book a Discovery Call</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-col items-center space-y-2 pt-6 border-t border-slate-700/50">
+                            <div class="flex items-center text-slate-400 hover:text-white transition-colors">
+                                <i data-feather="mail" class="w-5 h-5 mr-3"></i>
+                                <a href="mailto:faleconosco@dotsat7.com" class="text-lg">faleconosco@dotsat7.com</a>
                             </div>
                         </div>
                     </div>
@@ -410,12 +690,11 @@
                             data-i18n="footer_legal">Legal
                         </h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-purple-400 transition duration-300"
+                            <li><a href="privacy.html"
+                                    class="text-gray-400 hover:text-purple-400 transition duration-300"
                                     data-i18n="footer_privacy">Privacy</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-purple-400 transition duration-300"
+                            <li><a href="terms.html" class="text-gray-400 hover:text-purple-400 transition duration-300"
                                     data-i18n="footer_terms">Terms</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-purple-400 transition duration-300"
-                                    data-i18n="footer_cookies">Cookies</a></li>
                         </ul>
                     </div>
                     <div>
@@ -485,54 +764,60 @@
         const translations = {
             en: {
                 // Navigation
-                "hero_title": "Transform Your Business with AI Automation",
-                "hero_subtitle": "Leverage cutting-edge artificial intelligence to streamline operations and boost productivity.",
-                "hero_cta1": "Get Started",
-                "hero_cta2": "Learn More",
+                "nav_services": "Services",
+                "nav_about": "About",
+                "nav_contact": "Contact",
+                "hero_title": "Intelligent automation and practical AI solutions for your business.",
+                "hero_subtitle": "We develop chatbots, integrations, and automated workflows focused on simplicity, speed, low risk, and high predictability.",
+                "hero_cta": "Talk to an expert",
+
+                // Value Prop
+                "value_prop_title": "WHAT WE DO",
+                "value_prop_desc": "dotsat7 specializes in automation, integrations, and practical AI applications for companies seeking efficiency, scale, and operational cost reduction. We work with closed-scope projects, fast execution, and simple architecture, ensuring secure, predictable, and easy-to-maintain deliveries.",
 
                 // Services
-                "services_title": "Our AI Automation Services",
-                "services_subtitle": "We provide comprehensive AI solutions tailored to your business needs",
-                "service1_title": "Process Automation",
-                "service1_desc": "Automate repetitive tasks with intelligent algorithms that learn and improve over time.",
-                "service2_title": "Data Analytics",
-                "service2_desc": "Extract valuable insights from your data with our advanced machine learning models.",
-                "service3_title": "Chatbots & NLP",
-                "service3_desc": "Enhance customer experience with natural language processing and conversational AI.",
+                "services_title": "Our Solutions",
+                "services_subtitle": "Business process automation and intelligent systems",
+                "service1_title": "Intelligent Chatbots",
+                "service1_desc": "Typebot, WhatsApp, and Web automation for support and sales.",
+                "service2_title": "API Integrations",
+                "service2_desc": "Seamless connections between systems to unify data and actions.",
+                "service3_title": "n8n Workflows",
+                "service3_desc": "Visual orchestration of complex business processes and data flows.",
+                "service4_title": "AI Applications",
+                "service4_desc": "Practical AI agents for support, analysis, and decision making.",
+                "service5_title": "Intelligent Backends",
+                "service5_desc": "Robust Python-based backends designed for scale and AI integration.",
 
-                // Solutions
-                "solutions_title": "Tailored Solutions",
-                "solution1_title": "Sales Outreach",
-                "solution1_desc": "Agents that find leads, personalize emails, and book meetings directly to your calendar.",
-                "solution2_title": "Document Processing",
-                "solution2_desc": "Extract structured data from PDFs, invoices, and contracts in seconds.",
-                "solution3_title": "Code Assistant",
-                "solution3_desc": "Custom dev-bots trained on your codebase to write tests, refactor, and document.",
+                // Diff / About
+                "diff_title": "Why choose dotsat7?",
+                "diff1_title": "Low Risk & High Predictability",
+                "diff2_title": "Simple, Modular & Scalable Architecture",
+                "diff3_title": "Technical Projects with Clearly Defined Scope",
+                "diff4_title": "Fast & Secure Delivery",
+                "diff5_title": "Clear & Objective Communication",
 
-                // About
-                "about_title": "Why Choose dotsat7",
-                "about_desc1": "At dotsat7, we combine deep technical expertise with business acumen to deliver AI solutions that drive real results. Our team of data scientists and engineers are passionate about pushing the boundaries of what's possible with automation.",
-                "about_desc2": "We've helped businesses across industries reduce costs, improve efficiency, and unlock new opportunities through intelligent automation.",
-                "about_feature1": "Custom Solutions",
-                "about_feature2": "24/7 Support",
+                // Tech Stack
+                "stack_title": "Technologies We Master",
 
-                // Testimonials
-                "testimonials_title": "What Our Clients Say",
-                "testimonials_subtitle": "Trusted by businesses worldwide",
-                "testimonial1_role": "CEO, TechCorp",
-                "testimonial1_text": "\"dotsat7 transformed our operations with their AI automation. We've seen a 40% increase in productivity since implementation.\"",
-                "testimonial2_role": "CTO, FinServe",
-                "testimonial2_text": "\"The data analytics solution from dotsat gave us insights we never knew were possible. Game-changing for our business.\"",
-                "testimonial3_role": "Director, RetailPlus",
-                "testimonial3_text": "\"Their chatbot implementation reduced our customer service costs by 60% while improving satisfaction scores.\"",
+                // Testimonials / Case Studies
+                "case_studies_title": "Proven Results",
+                "case_studies_subtitle": "Real impact delivered to our partners.",
+                "case1_title": "Automated Support",
+                "case1_desc": "Implemented a Typebot agent that handles Tier 1 queries instantly.",
+                "case1_result": "Ticket Volume",
+                "case2_title": "Invoice Pipeline",
+                "case2_desc": "Orchestrated n8n workflow with OCR to extract and file invoice data automatically.",
+                "case2_result": "Saved Weekly",
+                "case3_title": "Lead Qualification",
+                "case3_desc": "AI Agent that engages website visitors, qualifies them, and books meetings.",
+                "case3_result": "More Meetings",
 
                 // Contact
-                "contact_title": "Ready to Automate?",
-                "contact_subtitle": "Get in touch to discuss how AI can transform your business",
-
-                "contact_info": "Contact Information",
-                "contact_email_title": "Email",
-
+                "contact_title": "Let's automate your process?",
+                "contact_subtitle": "Talk to our team and see how we can transform your flows into intelligent, fast, and secure solutions.",
+                "contact_cta": "Request Technical Evaluation",
+                "contact_book": "Book a Discovery Call",
 
                 // Footer
                 "footer_desc": "Pioneering AI automation solutions for the modern enterprise.",
@@ -545,58 +830,64 @@
                 "footer_terms": "Terms",
                 "footer_cookies": "Cookies",
                 "footer_connect": "Connect",
-                "footer_copyright": "© 2025 dotsat. All rights reserved."
+                "footer_copyright": "© 2025 dotsat7. All rights reserved."
             },
             pt: {
                 // Navigation
-                "hero_title": "Transforme Seu Negócio com Automação de IA",
-                "hero_subtitle": "Aproveite a inteligência artificial de ponta para otimizar operações e aumentar a produtividade.",
-                "hero_cta1": "Começar Agora",
-                "hero_cta2": "Saiba Mais",
+                "nav_services": "Serviços",
+                "nav_about": "Sobre",
+                "nav_contact": "Contato",
+                "hero_title": "Automação inteligente e soluções práticas com IA para o seu negócio.",
+                "hero_subtitle": "Desenvolvemos chatbots, integrações e fluxos automatizados com foco em simplicidade, rapidez, baixo risco e alta previsibilidade.",
+                "hero_cta": "Fale com um especialista",
+
+                // Value Prop
+                "value_prop_title": "O QUE FAZEMOS",
+                "value_prop_desc": "A dotsat7 é especializada em automação, integrações e aplicações práticas de inteligência artificial para empresas que buscam eficiência, escala e redução de custos operacionais. Atuamos com projetos de escopo fechado, execução rápida e arquitetura simples, garantindo entregas seguras, previsíveis e fáceis de manter.",
 
                 // Services
-                "services_title": "Nossos Serviços de Automação com IA",
-                "services_subtitle": "Oferecemos soluções abrangentes de IA personalizadas para suas necessidades",
-                "service1_title": "Automação de Processos",
-                "service1_desc": "Automatize tarefas repetitivas com algoritmos inteligentes que aprendem e melhoram com o tempo.",
-                "service2_title": "Análise de Dados",
-                "service2_desc": "Extraia insights valiosos de seus dados com nossos modelos avançados de aprendizado de máquina.",
-                "service3_title": "Chatbots & PLN",
-                "service3_desc": "Melhore a experiência do cliente com processamento de linguagem natural e IA conversacional.",
+                "services_title": "Nossas Soluções",
+                "services_subtitle": "Automação de processos empresariais",
+                "service1_title": "Chatbots Inteligentes",
+                "service1_desc": "Typebot, WhatsApp e Web para atendimento e escala.",
+                "service2_title": "Integrações via APIs",
+                "service2_desc": "Conexões entre sistemas para unificar dados e ações.",
+                "service3_title": "Orquestração com n8n",
+                "service3_desc": "Workflows visuais para processos de negócios complexos.",
+                "service4_title": "Aplicações de IA",
+                "service4_desc": "Agentes práticos para atendimento e análise.",
+                "service5_title": "Backends Inteligentes",
+                "service5_desc": "Backends em Python robustos e inteligentes.",
 
-                // Solutions
-                "solutions_title": "Soluções Sob Medida",
-                "solution1_title": "Prospecção de Vendas",
-                "solution1_desc": "Agentes que encontram leads, personalizam emails e agendam reuniões diretamente em sua agenda.",
-                "solution2_title": "Processamento de Documentos",
-                "solution2_desc": "Extraia dados estruturados de PDFs, faturas e contratos em segundos.",
-                "solution3_title": "Assistente de Código",
-                "solution3_desc": "Dev-bots personalizados treinados em seu código para escrever testes, refatorar e documentar.",
+                // Diff / About
+                "diff_title": "Por que escolher a dotsat7?",
+                "diff1_title": "Foco em baixo risco e alta previsibilidade",
+                "diff2_title": "Arquitetura simples, modular e escalável",
+                "diff3_title": "Projetos com escopo técnico bem definido",
+                "diff4_title": "Entregas rápidas",
+                "diff5_title": "Comunicação clara e objetiva",
 
-                // About
-                "about_title": "Por Que Escolher a dotsat7",
-                "about_desc1": "Na dotsat7, combinamos expertise técnica profunda com conhecimento de negócios para entregar soluções de IA que geram resultados reais. Nossa equipe de cientistas de dados e engenheiros é apaixonada por expandir os limites do que é possível com automação.",
-                "about_desc2": "Ajudamos empresas em diversos setores a reduzir custos, melhorar a eficiência e desbloquear novas oportunidades através da automação inteligente.",
-                "about_feature1": "Soluções Personalizadas",
-                "about_feature2": "Suporte 24/7",
+                // Tech Stack
+                "stack_title": "Tecnologias que dominamos",
 
-                // Testimonials
-                "testimonials_title": "O Que Nossos Clientes Dizem",
-                "testimonials_subtitle": "Confiado por empresas em todo o mundo",
-                "testimonial1_role": "CEO, TechCorp",
-                "testimonial1_text": "\"A dotsat7 transformou nossas operações com sua automação de IA. Vimos um aumento de 40% na produtividade desde a implementação.\"",
-                "testimonial2_role": "CTO, FinServe",
-                "testimonial2_text": "\"A solução de análise de dados da dotsat7 nos deu insights que nunca imaginamos ser possíveis. Mudou o jogo para nosso negócio.\"",
-                "testimonial3_role": "Diretora, RetailPlus",
-                "testimonial3_text": "\"A implementação do chatbot deles reduziu nossos custos de atendimento ao cliente em 60% enquanto melhorou as notas de satisfação.\"",
+                // Testimonials / Case Studies
+                "case_studies_title": "Resultados Comprovados",
+                "case_studies_subtitle": "Impacto real entregue aos nossos parceiros.",
+                "case1_title": "Suporte Automatizado",
+                "case1_desc": "Implementação de agente Typebot que resolve dúvidas de Nível 1 instantaneamente.",
+                "case1_result": "Volume de Chamados",
+                "case2_title": "Pipeline de Faturas",
+                "case2_desc": "Orquestração de workflow n8n com OCR para extração e arquivo de faturas.",
+                "case2_result": "Salvas Semanalmente",
+                "case3_title": "Qualificação de Leads",
+                "case3_desc": "Agente IA que engaja visitantes, qualifica e agenda reuniões.",
+                "case3_result": "Mais Reuniões",
 
                 // Contact
-                "contact_title": "Pronto para Automatizar?",
-                "contact_subtitle": "Entre em contato para discutir como a IA pode transformar seu negócio",
-
-                "contact_info": "Informações de Contato",
-                "contact_email_title": "Email",
-
+                "contact_title": "Vamos automatizar seu processo?",
+                "contact_subtitle": "Fale com nosso time e veja como podemos transformar seus fluxos em soluções inteligentes, rápidas e seguras.",
+                "contact_cta": "Solicitar avaliação técnica",
+                "contact_book": "Agendar Chamada de Descoberta",
 
                 // Footer
                 "footer_desc": "Soluções pioneiras em automação de IA para a empresa moderna.",
@@ -609,6 +900,7 @@
                 "footer_terms": "Termos",
                 "footer_cookies": "Cookies",
                 "footer_connect": "Conectar",
+                "footer_copyright": "© 2025 dotsat7. Todos os direitos reservados."
             }
         };
 
@@ -623,17 +915,26 @@
 
             // Update active language button
             document.querySelectorAll('.language-selector').forEach(button => {
-                button.classList.remove('bg-purple-600', 'text-white');
-                button.classList.add('bg-gray-100');
+                button.classList.remove('bg-purple-600', 'text-white', 'ring-2', 'ring-purple-400', 'shadow-lg');
+                button.classList.add('bg-slate-800', 'text-slate-400', 'hover:text-white');
             });
 
-            if (lang === 'en') {
-                document.querySelector('.language-selector:nth-child(1)').classList.add('bg-purple-600', 'text-white');
-                document.querySelector('.language-selector:nth-child(1)').classList.remove('bg-gray-100');
-            } else {
-                document.querySelector('.language-selector:nth-child(2)').classList.add('bg-purple-600', 'text-white');
-                document.querySelector('.language-selector:nth-child(2)').classList.remove('bg-gray-100');
-            }
+            const activeBtn = lang === 'en'
+                ? document.querySelector('.language-selector:nth-child(1)')
+                : document.querySelector('.language-selector:nth-child(2)');
+
+            // Also handle mobile menu selectors if they exist or ensure selector matches all
+            // The previous code targeted :nth-child(1) which might be fragile if there are multiple containers.
+            // Let's make it robust by selecting based on onclick attribute or text content if possible, 
+            // but for now keeping it simple as per existing structure but applying to ALL matching buttons with that lang.
+
+            // Actually, the previous code only updated the first set of buttons found or specific children.
+            // Let's update ALL buttons that correspond to the language.
+
+            document.querySelectorAll(`button[onclick="changeLanguage('${lang}')"]`).forEach(btn => {
+                btn.classList.add('bg-purple-600', 'text-white', 'ring-2', 'ring-purple-400', 'shadow-lg');
+                btn.classList.remove('bg-slate-800', 'text-slate-400', 'hover:text-white', 'bg-gray-100');
+            });
 
             // Close mobile menu if open
             document.getElementById('mobile-menu').classList.add('hidden');
@@ -708,6 +1009,67 @@
             window.addEventListener('resize', resize);
             init();
             draw();
+        }
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible translate-y-10 z-50">
+        <i data-feather="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <script>
+        // Back to Top Logic
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-10');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-10');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Typewriter Effect
+        const typeText = document.getElementById('typewriter-text');
+        const phrases = ["Automation", "Chatbots", "Integrations", "AI Agents", "Workflows", "Solutions"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (isDeleting) {
+                typeText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                typeText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 150;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typewriter if element exists
+        if (typeText) {
+            type();
         }
     </script>
 </body>
