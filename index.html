@@ -165,17 +165,20 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <div class="flex-shrink-0 flex items-center">
-                            <div class="flex-shrink-0 flex items-center">
-                                <img src="images/dotsat_logo.png" alt="dotsat7 Logo"
-                                    class="h-16 w-auto mr-3 rounded-full">
-                            </div>
-                        </div>
+                        <a href="/" class="flex items-center">
+                            <img src="images/dotsat_logo.png" alt="dotsat7 Logo" class="h-16 w-auto mr-3 rounded-full">
+                        </a>
                     </div>
                     <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
                         <a href="#services"
                             class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
                             data-i18n="nav_services">Services</a>
+                        <a href="protovision.html"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_protovision">ProtoVision</a>
+                        <a href="pricing.html"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_pricing">Pricing</a>
                         <a href="#about"
                             class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
                             data-i18n="nav_about">About</a>
@@ -209,6 +212,12 @@
             <a href="#services"
                 class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
                 data-i18n="nav_services">Services</a>
+            <a href="protovision.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_protovision">ProtoVision</a>
+            <a href="pricing.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_pricing">Pricing</a>
             <a href="#about"
                 class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
                 data-i18n="nav_about">About</a>
@@ -236,16 +245,20 @@
                 <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 leading-tight"
                         data-i18n="hero_title">
-                        Intelligent <span id="typewriter-text"
-                            class="text-white typewriter-cursor">Automation</span><br> for your business.
+                        Turning complex ideas into production-ready systems.
                     </h1>
-                    <p class="text-xl mb-8 text-slate-300 leading-relaxed" data-i18n="hero_subtitle">We develop
-                        chatbots, integrations, and automated workflows focused on simplicity, speed, low risk, and high
-                        predictability.</p>
-                    <div class="flex space-x-4">
-                        <a href="#contact"
-                            class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 shadow-lg shadow-purple-500/30 ring-1 ring-purple-500"
-                            data-i18n="hero_cta">Talk to an expert</a>
+                    <p class="text-xl mb-4 text-slate-300 leading-relaxed" data-i18n="hero_subtitle">
+                        At dotSat7, we help businesses use AI and modern technology to scale sustainably — from early
+                        concepts to real-world implementation.
+                    </p>
+                    <p class="text-base mb-8 text-slate-400 leading-relaxed" data-i18n="hero_supporting">
+                        We design, prototype, and deliver solutions end to end, so technology accelerates your business
+                        instead of slowing it down.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#how-we-work"
+                            class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 shadow-lg shadow-purple-500/30 ring-1 ring-purple-500 text-center"
+                            data-i18n="hero_cta_primary">See how we work</a>
                     </div>
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
@@ -256,68 +269,243 @@
         </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-800">
-        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-2xl font-bold text-purple-400 mb-6 uppercase tracking-wider" data-i18n="value_prop_title">
-                What We Do</h2>
-            <p class="text-xl text-slate-300 leading-relaxed" data-i18n="value_prop_desc">
-                dotsat7 specializes in automation, integrations, and practical AI applications for companies seeking
-                efficiency, scale, and operational cost reduction.
-                <br><br>
-                We work with closed-scope projects, fast execution, and simple architecture, ensuring secure,
-                predictable, and easy-to-maintain deliveries.
-            </p>
-
-            <!-- Visual Workflow Diagram -->
-            <div
-                class="mt-12 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-4 opacity-90">
-                <!-- User -->
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-slate-700 shadow-lg mb-2">
-                        <i data-feather="user" class="text-slate-400 w-8 h-8"></i>
-                    </div>
-                    <span class="text-sm text-slate-400 font-medium">User</span>
-                </div>
-
-                <!-- Arrow -->
-                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
-
-                <!-- Chatbot -->
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-purple-500/30 shadow-lg shadow-purple-500/20 mb-2">
-                        <i data-feather="message-circle" class="text-purple-400 w-8 h-8"></i>
-                    </div>
-                    <span class="text-sm text-purple-400 font-medium">AI Agent</span>
-                </div>
-
-                <!-- Arrow -->
-                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
-
-                <!-- Automation -->
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-500/30 shadow-lg shadow-cyan-500/20 mb-2">
-                        <i data-feather="cpu" class="text-cyan-400 w-8 h-8"></i>
-                    </div>
-                    <span class="text-sm text-cyan-400 font-medium">n8n Workflow</span>
-                </div>
-
-                <!-- Arrow -->
-                <i data-feather="arrow-right" class="text-purple-500 w-6 h-6 transform rotate-90 md:rotate-0"></i>
-
-                <!-- Results -->
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center border border-green-500/30 shadow-lg shadow-green-500/20 mb-2">
-                        <i data-feather="check-circle" class="text-green-400 w-8 h-8"></i>
-                    </div>
-                    <span class="text-sm text-green-400 font-medium">Results</span>
+    <!-- Intro Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-sm font-semibold tracking-wide text-purple-400 mb-6 uppercase"
+                    data-i18n="intro_small_title">
+                    AI is powerful — but it shouldn't be a distraction
+                </p>
+                <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
+                    <p data-i18n="intro_p1">
+                        <strong class="text-white">AI is changing every industry.</strong>
+                    </p>
+                    <p data-i18n="intro_p2">
+                        It allows businesses to scale in ways that were hard to imagine just a few years ago — but
+                        learning, integrating, and maintaining AI systems can quickly become overwhelming.
+                    </p>
+                    <p data-i18n="intro_p3">
+                        <strong class="text-white">At dotSat7, we take on that complexity for you.</strong>
+                    </p>
+                    <p data-i18n="intro_p4">
+                        We use AI as a practical engineering tool to design, prototype, and implement solutions in a
+                        sustainable way, so you can focus on running and growing your business — not on wiring chatbots,
+                        connecting APIs, or chasing the latest tools.
+                    </p>
                 </div>
             </div>
-            </p> <!-- Close p tag correctly or restructure, existing p tag closed early -->
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-white mb-12 uppercase tracking-wide" data-i18n="hww_title">
+                Our End-to-End Demo-First Approach
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute top-12 left-0 w-full h-1 bg-gradient-to-r from-purple-900 via-purple-500 to-cyan-500 rounded -z-10 opacity-30">
+                </div>
+
+                <!-- Step 1: Analyze -->
+                <div class="flex flex-col items-center group relative">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-700 group-hover:border-purple-500 shadow-lg shadow-purple-500/10 transition-all duration-300 mb-6 bg-slate-900/80 backdrop-blur-sm">
+                        <i data-feather="search"
+                            class="text-purple-400 w-10 h-10 group-hover:scale-110 transition-transform"></i>
+                        <div
+                            class="absolute -top-2 -right-2 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            1</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="hww_step1_title">Analyze</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="hww_step1_desc">
+                        We understand your idea, requirements, and AI opportunity.
+                    </p>
+                </div>
+
+                <!-- Step 2: Prototype -->
+                <div class="flex flex-col items-center group relative">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-700 group-hover:border-pink-500 shadow-lg shadow-pink-500/10 transition-all duration-300 mb-6 bg-slate-900/80 backdrop-blur-sm">
+                        <i data-feather="zap"
+                            class="text-pink-400 w-10 h-10 group-hover:scale-110 transition-transform"></i>
+                        <div
+                            class="absolute -top-2 -right-2 w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            2</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="hww_step2_title">Prototype</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="hww_step2_desc">
+                        Generate a working demo in days, not months.
+                    </p>
+                </div>
+
+                <!-- Step 3: Deploy -->
+                <div class="flex flex-col items-center group relative">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-700 group-hover:border-cyan-500 shadow-lg shadow-cyan-500/10 transition-all duration-300 mb-6 bg-slate-900/80 backdrop-blur-sm">
+                        <i data-feather="monitor"
+                            class="text-cyan-400 w-10 h-10 group-hover:scale-110 transition-transform"></i>
+                        <div
+                            class="absolute -top-2 -right-2 w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            3</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="hww_step3_title">Deploy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="hww_step3_desc">
+                        Deliver a live, interactive prototype for immediate testing.
+                    </p>
+                </div>
+
+                <!-- Step 4: Decide -->
+                <div class="flex flex-col items-center group relative">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-700 group-hover:border-green-500 shadow-lg shadow-green-500/10 transition-all duration-300 mb-6 bg-slate-900/80 backdrop-blur-sm">
+                        <i data-feather="check-circle"
+                            class="text-green-400 w-10 h-10 group-hover:scale-110 transition-transform"></i>
+                        <div
+                            class="absolute -top-2 -right-2 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            4</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="hww_step4_title">Decide</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="hww_step4_desc">
+                        Refine, iterate, or scale based on real feedback.
+                    </p>
+                </div>
+
+                <!-- Step 5: Implement -->
+                <div class="flex flex-col items-center group relative">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-700 group-hover:border-blue-500 shadow-lg shadow-blue-500/10 transition-all duration-300 mb-6 bg-slate-900/80 backdrop-blur-sm">
+                        <i data-feather="layers"
+                            class="text-blue-400 w-10 h-10 group-hover:scale-110 transition-transform"></i>
+                        <div
+                            class="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                            5</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="hww_step5_title">Implement</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="hww_step5_desc">
+                        Turn the validated prototype into production-ready code.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <a href="#contact"
+                    class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 border border-slate-600 hover:border-purple-500"
+                    data-i18n="hww_cta">
+                    Explore Our Process <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study / Proof Section -->
+    <section id="case-study-proof"
+        class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50 relative border-b border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div
+                        class="bg-gradient-to-tr from-purple-900/50 to-slate-900 p-8 rounded-2xl border border-purple-500/20 shadow-2xl relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl -mr-16 -mt-16">
+                        </div>
+                        <div class="space-y-6 relative z-10">
+                            <!-- Problem -->
+                            <div class="flex items-start">
+                                <div class="bg-red-500/20 p-2 rounded-lg mr-4 mt-1">
+                                    <i data-feather="alert-triangle" class="text-red-400 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1" data-i18n="proof_problem_title">Problem</h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="proof_problem_desc">Clients unsure who
+                                        can deliver.</p>
+                                </div>
+                            </div>
+                            <!-- Solution -->
+                            <div class="flex items-start">
+                                <div class="bg-blue-500/20 p-2 rounded-lg mr-4 mt-1">
+                                    <i data-feather="cpu" class="text-blue-400 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1" data-i18n="proof_solution_title">Solution</h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="proof_solution_desc">AI-driven
+                                        prototype workflow.</p>
+                                </div>
+                            </div>
+                            <!-- Outcome -->
+                            <div class="flex items-start">
+                                <div class="bg-green-500/20 p-2 rounded-lg mr-4 mt-1">
+                                    <i data-feather="trending-up" class="text-green-400 w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1" data-i18n="proof_outcome_title">Outcome</h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="proof_outcome_desc">Faster responses,
+                                        higher confidence, reusable demos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-white mb-4" data-i18n="proof_title">Turning Freelance Leads into
+                        Live AI Prototypes</h2>
+                    <p class="text-xl text-slate-400 mb-8 leading-relaxed" data-i18n="proof_subtitle">
+                        Our internal workflow generates working demos and proposal-ready solutions for real projects,
+                        with the option to scale to production-ready systems.
+                    </p>
+                    <a href="#portfolio"
+                        class="inline-flex items-center text-purple-400 font-bold hover:text-purple-300 transition-colors group">
+                        <span data-i18n="proof_cta">See a Working Demo</span>
+                        <i data-feather="arrow-right"
+                            class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Innovation Section (NEW) -->
+    <section id="innovation-lab" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative border-b border-slate-800">
+        <!-- Grid pattern background -->
+        <div
+            class="absolute inset-0 bg-grid-pattern [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-6" data-i18n="innovation_title">
+                    Building our own tools to build better for you
+                </h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-4" data-i18n="innovation_desc1">
+                    At dotSat7, we don't wait for perfect tools.
+                </p>
+                <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-4" data-i18n="innovation_desc2">
+                    When we face recurring challenges — evaluating ideas, prototyping quickly, or validating solutions
+                    — we build internal AI-driven workflows to help us move faster and make better decisions.
+                </p>
+                <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed" data-i18n="innovation_desc3">
+                    Some of these internal systems power the live demos and experiments you'll see here.
+                </p>
+            </div>
+
+            <!-- Callout Box -->
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="bg-gradient-to-r from-purple-900/30 to-cyan-900/30 border border-purple-500/30 rounded-xl p-8 backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center justify-center mb-3">
+                        <i data-feather="shield-check" class="text-purple-400 w-8 h-8 mr-3"></i>
+                        <h3 class="text-lg font-bold text-white" data-i18n="innovation_callout_title">Risk Reduction
+                            First</h3>
+                    </div>
+                    <p class="text-purple-200 text-center font-medium text-lg" data-i18n="innovation_callout_text">
+                        "This is how we reduce risk before writing production code."
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -331,8 +519,10 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-white mb-4" data-i18n="services_title">Our Solutions</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="services_subtitle">Business process
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-2" data-i18n="services_subtitle">Business process
                     automation and intelligent systems</p>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto" data-i18n="services_backed">Backed by internal tools
+                    and AI workflows we use ourselves.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -535,8 +725,8 @@
         </div>
     </section>
 
-    <!-- Case Studies Section (Replacing Testimonials) -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative overflow-hidden">
+    <!-- Portfolio / Examples Section -->
+    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative overflow-hidden">
         <!-- Ambient Orbs -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-purple-900/30 rounded-full blur-3xl animate-blob">
         </div>
@@ -549,83 +739,133 @@
 
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="case_studies_title">Proven Results</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="case_studies_subtitle">Real impact
-                    delivered to our partners.</p>
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="portfolio_title">Experiments & Live Prototypes
+                </h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="portfolio_subtitle">
+                    These are real working prototypes created during our problem-solving and research process. They
+                    demonstrate how we think, how we validate ideas, and how we approach production systems.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Case Study 1 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500 cursor-pointer group"
-                    data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-case="case1"
-                    data-title="E-commerce Automated Support"
-                    data-desc="We implemented a Typebot agent integrated with Shopify to handle 60% of Tier 1 support queries. The bot answers shipping questions, processes returns, and recommends products, escalating only complex issues to human agents."
-                    data-image="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800">
+                <!-- Demo 1: AI Ticket Classifier -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500 cursor-pointer group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-case="demo1"
+                    data-title="AI Ticket Classifier"
+                    data-desc="An intelligent system that automatically categorizes and prioritizes support tickets using Natural Language Processing, reducing manual triage time by 80%."
+                    data-image="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-purple-900/40 rounded-lg text-purple-400 group-hover:scale-110 transition-transform">
-                            <i data-feather="shopping-cart" class="w-6 h-6"></i>
+                            <i data-feather="tag" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-bold text-white text-lg ml-4">E-commerce</h4>
                     </div>
-                    <h5 class="text-purple-300 font-medium mb-2 uppercase text-sm tracking-wide"
-                        data-i18n="case1_title">Automated Support</h5>
-                    <p class="text-slate-300 mb-4" data-i18n="case1_desc">Implemented a Typebot agent that handles Tier
-                        1 queries instantly.</p>
+                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo1_title">AI Ticket Classifier</h5>
+                    <p class="text-sm text-purple-400 mb-3 font-medium" data-i18n="demo1_explores">Explores: Support
+                        automation & NLP categorization</p>
+                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo1_desc">Automated categorization and
+                        prioritization of support tickets.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full border border-purple-500/30">Python</span>
+                        <span
+                            class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full border border-purple-500/30">OpenAI</span>
+                        <span
+                            class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full border border-purple-500/30">NLP</span>
+                    </div>
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <p class="text-green-400 font-bold flex items-center"><i data-feather="arrow-down-right"
-                                class="w-4 h-4 mr-2"></i> 60% <span class="text-slate-400 font-normal ml-1"
-                                data-i18n="case1_result">Ticket Volume</span></p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500 uppercase tracking-wide"
+                                data-i18n="demo1_status">Status: Research Prototype</span>
+                            <span class="text-purple-400 font-bold flex items-center text-sm">
+                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
+                                    class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Case Study 2 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500 cursor-pointer group"
-                    data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-case="case2"
-                    data-title="Logistics Invoice Pipeline"
-                    data-desc="A complete n8n workflow that monitors email inboxes for invoices, uses OCR to extract data, validates it against POs, and automatically uploads it to the ERP system."
-                    data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+                <!-- Demo 2: Sales Forecast Dashboard -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500 cursor-pointer group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-case="demo2"
+                    data-title="Sales Forecast Dashboard"
+                    data-desc="A real-time dashboard powered by predictive analytics that forecasts sales trends, inventory needs, and revenue projections with high accuracy."
+                    data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform">
-                            <i data-feather="truck" class="w-6 h-6"></i>
+                            <i data-feather="bar-chart-2" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-bold text-white text-lg ml-4">Logistics</h4>
                     </div>
-                    <h5 class="text-cyan-300 font-medium mb-2 uppercase text-sm tracking-wide" data-i18n="case2_title">
-                        Invoice Pipeline</h5>
-                    <p class="text-slate-300 mb-4" data-i18n="case2_desc">Orchestrated n8n workflow with OCR to extract
-                        and file invoice data automatically.</p>
+                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo2_title">Sales Forecast Dashboard</h5>
+                    <p class="text-sm text-cyan-400 mb-3 font-medium" data-i18n="demo2_explores">Explores: Predictive
+                        analytics & business intelligence</p>
+                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo2_desc">Real-time dashboard for sales trends
+                        and revenue projections.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="px-2 py-1 bg-cyan-900/40 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Python</span>
+                        <span
+                            class="px-2 py-1 bg-cyan-900/40 text-cyan-300 text-xs rounded-full border border-cyan-500/30">ML</span>
+                        <span
+                            class="px-2 py-1 bg-cyan-900/40 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Analytics</span>
+                    </div>
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <p class="text-green-400 font-bold flex items-center"><i data-feather="clock"
-                                class="w-4 h-4 mr-2"></i> 20h+ <span class="text-slate-400 font-normal ml-1"
-                                data-i18n="case2_result">Saved Weekly</span></p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500 uppercase tracking-wide"
+                                data-i18n="demo2_status">Status: Prototype</span>
+                            <span class="text-cyan-400 font-bold flex items-center text-sm">
+                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
+                                    class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Case Study 3 -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500 cursor-pointer group"
-                    data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-case="case3"
-                    data-title="SaaS Lead Qualification"
-                    data-desc="An AI sales agent embedded on the website that engages visitors 24/7, qualifies them based on budget and need, and directly books meetings into the sales team's calendar."
-                    data-image="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800">
+                <!-- Demo 3: Knowledge Chatbot Prototype -->
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500 cursor-pointer group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-case="demo3"
+                    data-title="Knowledge Chatbot Prototype"
+                    data-desc="A RAG (Retrieval-Augmented Generation) chatbot that ingests company documentation to answer employee questions instantly, acting as a second brain for the organization."
+                    data-image="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=800">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-pink-900/40 rounded-lg text-pink-400 group-hover:scale-110 transition-transform">
-                            <i data-feather="users" class="w-6 h-6"></i>
+                            <i data-feather="message-square" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-bold text-white text-lg ml-4">SaaS B2B</h4>
                     </div>
-                    <h5 class="text-pink-300 font-medium mb-2 uppercase text-sm tracking-wide" data-i18n="case3_title">
-                        Lead Qualification</h5>
-                    <p class="text-slate-300 mb-4" data-i18n="case3_desc">AI Agent that engages website visitors,
-                        qualifies them, and books meetings.</p>
+                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo3_title">Knowledge Chatbot</h5>
+                    <p class="text-sm text-pink-400 mb-3 font-medium" data-i18n="demo3_explores">Explores: RAG
+                        architecture & knowledge retrieval</p>
+                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo3_desc">AI chatbot for instant internal
+                        documentation answers.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="px-2 py-1 bg-pink-900/40 text-pink-300 text-xs rounded-full border border-pink-500/30">LangChain</span>
+                        <span
+                            class="px-2 py-1 bg-pink-900/40 text-pink-300 text-xs rounded-full border border-pink-500/30">RAG</span>
+                        <span
+                            class="px-2 py-1 bg-pink-900/40 text-pink-300 text-xs rounded-full border border-pink-500/30">OpenAI</span>
+                    </div>
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <p class="text-green-400 font-bold flex items-center"><i data-feather="trending-up"
-                                class="w-4 h-4 mr-2"></i> 40% <span class="text-slate-400 font-normal ml-1"
-                                data-i18n="case3_result">More Meetings</span></p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500 uppercase tracking-wide"
+                                data-i18n="demo3_status">Status: Experiment</span>
+                            <span class="text-pink-400 font-bold flex items-center text-sm">
+                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
+                                    class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#contact"
+                    class="inline-flex items-center justify-center bg-transparent hover:bg-slate-800 text-white px-8 py-3 rounded-lg font-medium transition duration-300 border border-slate-600 hover:border-white"
+                    data-i18n="portfolio_cta">
+                    View Full Portfolio <i data-feather="grid" class="ml-2 w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -741,14 +981,33 @@
         }
     </script>
 
+    <!-- Vision Section (NEW) -->
+    <section id="vision" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-6" data-i18n="vision_title">
+                    Always building, always learning
+                </h2>
+                <p class="text-xl text-slate-300 leading-relaxed mb-6" data-i18n="vision_desc1">
+                    Some of the internal systems we build today may evolve into future offerings. Others remain
+                    internal tools that simply make us better partners.
+                </p>
+                <p class="text-lg text-slate-400" data-i18n="vision_desc2">
+                    What matters is that we stay curious, pragmatic, and focused on delivering real value.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">Let's automate your process?
-                </h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="contact_subtitle">Talk to our team and
-                    see how we can transform your flows into intelligent, fast, and secure solutions.</p>
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">Let’s Build Something Real</h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="contact_subtitle">
+                    Validate ideas, reduce risk, and see AI in action before committing. dotSat7 can also take your
+                    project to full production-ready deployment.
+                </p>
             </div>
 
             <div class="flex justify-center" data-aos="fade-up">
@@ -879,6 +1138,42 @@
             });
         });
 
+        // Function to update active navigation state based on URL hash
+        function updateActiveNav() {
+            const hash = window.location.hash;
+
+            // Get all navigation links (both desktop and mobile)
+            const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]');
+
+            // Remove active classes from all nav links
+            navLinks.forEach(link => {
+                link.classList.remove('text-white', 'font-bold', 'border-b-2', 'border-purple-500');
+                link.classList.add('text-slate-300', 'font-medium');
+            });
+
+            // If there's a hash, find and activate the corresponding link
+            if (hash) {
+                const activeLinks = document.querySelectorAll(`nav a[href="${hash}"], #mobile-menu a[href="${hash}"]`);
+                activeLinks.forEach(link => {
+                    link.classList.remove('text-slate-300', 'font-medium');
+                    link.classList.add('text-white', 'font-bold', 'border-b-2', 'border-purple-500');
+                });
+            }
+        }
+
+        // Update active state on page load
+        updateActiveNav();
+
+        // Update active state when hash changes
+        window.addEventListener('hashchange', updateActiveNav);
+
+        // Update active state when clicking nav links
+        document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function () {
+                setTimeout(updateActiveNav, 10);
+            });
+        });
+
         // Initialize AOS
         AOS.init({
             duration: 800,
@@ -891,19 +1186,91 @@
             en: {
                 // Navigation
                 "nav_services": "Services",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "How We Engage",
                 "nav_about": "About",
                 "nav_contact": "Contact",
-                "hero_title": "Intelligent automation and practical AI solutions for your business.",
-                "hero_subtitle": "We develop chatbots, integrations, and automated workflows focused on simplicity, speed, low risk, and high predictability.",
-                "hero_cta": "Talk to an expert",
 
-                // Value Prop
-                "value_prop_title": "WHAT WE DO",
-                "value_prop_desc": "dotsat7 specializes in automation, integrations, and practical AI applications for companies seeking efficiency, scale, and operational cost reduction. We work with closed-scope projects, fast execution, and simple architecture, ensuring secure, predictable, and easy-to-maintain deliveries.",
+                //Hero
+                "hero_title": "Turning complex ideas into production-ready systems.",
+                "hero_subtitle": "At dotSat7, we help businesses use AI and modern technology to scale sustainably — from early concepts to real-world implementation.",
+                "hero_supporting": "We design, prototype, and deliver solutions end to end, so technology accelerates your business instead of slowing it down.",
+                "hero_cta_primary": "See how we work",
+
+                // Intro Section
+                "intro_small_title": "AI is powerful — but it shouldn't be a distraction",
+                "intro_p1": "AI is changing every industry.",
+                "intro_p2": "It allows businesses to scale in ways that were hard to imagine just a few years ago — but learning, integrating, and maintaining AI systems can quickly become overwhelming.",
+                "intro_p3": "At dotSat7, we take on that complexity for you.",
+                "intro_p4": "We use AI as a practical engineering tool to design, prototype, and implement solutions in a sustainable way, so you can focus on running and growing your business — not on wiring chatbots, connecting APIs, or chasing the latest tools.",
+
+                // How We Work
+                "hww_title": "Our End-to-End Demo-First Approach",
+                "hww_step1_title": "Analyze",
+                "hww_step1_desc": "We understand your idea, requirements, and AI opportunity.",
+                "hww_step2_title": "Prototype",
+                "hww_step2_desc": "Generate a working demo in days, not months.",
+                "hww_step3_title": "Deploy",
+                "hww_step3_desc": "Deliver a live, interactive prototype for immediate testing.",
+                "hww_step4_title": "Decide",
+                "hww_step4_desc": "Refine, iterate, or scale based on real feedback.",
+                "hww_step5_title": "Implement",
+                "hww_step5_desc": "Turn the validated prototype into production-ready code.",
+                "hww_cta": "Explore Our Process",
+
+                // Internal Innovation
+                "innovation_title": "Building our own tools to build better for you",
+                "innovation_desc1": "At dotSat7, we don't wait for perfect tools.",
+                "innovation_desc2": "When we face recurring challenges \u2014 evaluating ideas, prototyping quickly, or validating solutions \u2014 we build internal AI-driven workflows to help us move faster and make better decisions.",
+                "innovation_desc3": "Some of these internal systems power the live demos and experiments you'll see here.",
+                "innovation_callout_title": "Risk Reduction First",
+                "innovation_callout_text": "\"This is how we reduce risk before writing production code.\"",
+
+                // Proof
+                "proof_title": "Turning Freelance Leads into Live AI Prototypes",
+                "proof_subtitle": "Our internal workflow generates working demos and proposal-ready solutions for real projects, with the option to scale to production-ready systems.",
+                "proof_problem_title": "Problem",
+                "proof_problem_desc": "Clients unsure who can deliver.",
+                "proof_solution_title": "Solution",
+                "proof_solution_desc": "AI-driven prototype workflow.",
+                "proof_outcome_title": "Outcome",
+                "proof_outcome_desc": "Faster responses, higher confidence, reusable demos.",
+                "proof_cta": "See a Working Demo",
+
+                // Portfolio
+                "portfolio_title": "Experiments & Live Prototypes",
+                "portfolio_subtitle": "These are real working prototypes created during our problem-solving and research process. They demonstrate how we think, how we validate ideas, and how we approach production systems.",
+                "demo1_title": "AI Ticket Classifier",
+                "demo1_explores": "Explores: Support automation & NLP categorization",
+                "demo1_desc": "Automated categorization and prioritization of support tickets.",
+                "demo1_status": "Status: Research Prototype",
+                "demo2_title": "Sales Forecast Dashboard",
+                "demo2_explores": "Explores: Predictive analytics & business intelligence",
+                "demo2_desc": "Real-time dashboard for sales trends and revenue projections.",
+                "demo2_status": "Status: Prototype",
+                "demo3_title": "Knowledge Chatbot",
+                "demo3_explores": "Explores: RAG architecture & knowledge retrieval",
+                "demo3_desc": "AI chatbot for instant internal documentation answers.",
+                "demo3_status": "Status: Experiment",
+                "demo_cta": "View Demo",
+                "portfolio_cta": "View Full Portfolio",
+
+                // Modals (Demo Details)
+                "demo1_modal_title": "AI Ticket Classifier",
+                "demo1_modal_desc": "An intelligent system that automatically categorizes and prioritizes support tickets using Natural Language Processing, reducing manual triage time by 80%.",
+                "demo2_modal_title": "Sales Forecast Dashboard",
+                "demo2_modal_desc": "A real-time dashboard powered by predictive analytics that forecasts sales trends, inventory needs, and revenue projections with high accuracy.",
+                "demo3_modal_title": "Knowledge Chatbot Prototype",
+                "demo3_modal_desc": "A RAG (Retrieval-Augmented Generation) chatbot that ingests company documentation to answer employee questions instantly, acting as a second brain for the organization.",
+
+                // Contact
+                "contact_title": "Let’s Build Something Real",
+                "contact_subtitle": "Validate ideas, reduce risk, and see AI in action before committing. dotSat7 can also take your project to full production-ready deployment.",
 
                 // Services
                 "services_title": "Our Solutions",
                 "services_subtitle": "Business process automation and intelligent systems",
+                "services_backed": "Backed by internal tools and AI workflows we use ourselves.",
                 "service1_title": "Intelligent Chatbots",
                 "service1_desc": "Typebot, WhatsApp, and Web automation for support and sales.",
                 "service2_title": "API Integrations",
@@ -967,7 +1334,12 @@
                 "roi_desc_rate": "Average hourly rate of employee(s) doing the work.",
                 "roi_result_title": "Annual Cost of Manual Work",
                 "roi_savings_label": "You could save up to",
-                "roi_cta": "Stop Wasting Money →",
+                "roi_cta": "Stop Wasting Money \u2192",
+
+                // Vision
+                "vision_title": "Always building, always learning",
+                "vision_desc1": "Some of the internal systems we build today may evolve into future offerings. Others remain internal tools that simply make us better partners.",
+                "vision_desc2": "What matters is that we stay curious, pragmatic, and focused on delivering real value.",
 
                 // Modals
                 "case1_modal_title": "Automated E-commerce Support",
@@ -980,29 +1352,104 @@
             pt: {
                 // Navigation
                 "nav_services": "Serviços",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "Como atuamos",
                 "nav_about": "Sobre",
                 "nav_contact": "Contato",
-                "hero_title": "Automação inteligente e soluções práticas com IA para o seu negócio.",
-                "hero_subtitle": "Desenvolvemos chatbots, integrações e fluxos automatizados com foco em simplicidade, rapidez, baixo risco e alta previsibilidade.",
-                "hero_cta": "Fale com um especialista",
 
-                // Value Prop
-                "value_prop_title": "O QUE FAZEMOS",
-                "value_prop_desc": "A dotsat7 é especializada em automação, integrações e aplicações práticas de inteligência artificial para empresas que buscam eficiência, escala e redução de custos operacionais. Atuamos com projetos de escopo fechado, execução rápida e arquitetura simples, garantindo entregas seguras, previsíveis e fáceis de manter.",
+                // Hero
+                "hero_title": "Transformando ideias complexas em sistemas prontos para produção.",
+                "hero_subtitle": "Na dotSat7, ajudamos empresas a usar IA e tecnologia moderna para escalar de forma sustentável — desde conceitos iniciais até implementação real.",
+                "hero_supporting": "Projetamos, prototipamos e entregamos soluções de ponta a ponta, para que a tecnologia acelere seu negócio ao invés de desacelerá-lo.",
+                "hero_cta_primary": "Veja como trabalhamos",
+
+                // Intro Section
+                "intro_small_title": "IA é poderosa — mas não deveria ser uma distração",
+                "intro_p1": "A IA está mudando todas as indústrias.",
+                "intro_p2": "Ela permite que empresas escalem de maneiras difíceis de imaginar há apenas alguns anos — mas aprender, integrar e manter sistemas de IA pode rapidamente se tornar esmagador.",
+                "intro_p3": "Na dotSat7, assumimos essa complexidade para você.",
+                "intro_p4": "Usamos IA como uma ferramenta prática de engenharia para projetar, prototipar e implementar soluções de forma sustentável, para que você possa focar em administrar e expandir seu negócio — não em conectar chatbots, APIs ou perseguir as últimas ferramentas.",
+                "hero_vision": "Empresa Primeiro, Capacidade Segundo",
+                "hero_cta_primary": "Veja como constru\u00edmos",
+                "hero_cta_secondary": "Explore Nosso Laboratório",
+
+                // How We Work
+                "hww_title": "Nossa Abordagem Demo-First de Ponta a Ponta",
+                "hww_step1_title": "Analisar",
+                "hww_step1_desc": "Entendemos sua ideia, requisitos e oportunidade de IA.",
+                "hww_step2_title": "Prototipar",
+                "hww_step2_desc": "Geramos uma demo funcional em dias, não meses.",
+                "hww_step3_title": "Implantar",
+                "hww_step3_desc": "Entregamos um protótipo interativo ao vivo para testes imediatos.",
+                "hww_step4_title": "Decidir",
+                "hww_step4_desc": "Refinar, iterar ou escalar com base em feedback real.",
+                "hww_step5_title": "Implementar",
+                "hww_step5_desc": "Transformar o protótipo validado em código pronto para produção.",
+                "hww_cta": "Explore Nosso Processo",
+
+                // Internal Innovation
+                "innovation_title": "Construindo nossas pr\u00f3prias ferramentas para construir melhor para voc\u00ea",
+                "innovation_desc1": "Na dotSat7, n\u00e3o esperamos por ferramentas perfeitas.",
+                "innovation_desc2": "Quando enfrentamos desafios recorrentes \u2014 avaliar ideias, prototipar rapidamente ou validar solu\u00e7\u00f5es \u2014 constru\u00edmos fluxos de trabalho internos impulsionados por IA para nos ajudar a avan\u00e7ar mais r\u00e1pido e tomar melhores decis\u00f5es.",
+                "innovation_desc3": "Alguns desses sistemas internos alimentam as demos ao vivo e experimentos que voc\u00ea ver\u00e1 aqui.",
+                "innovation_callout_title": "Redu\u00e7\u00e3o de Risco Primeiro",
+                "innovation_callout_text": "\"\u00c9 assim que reduzimos riscos antes de escrever c\u00f3digo de produ\u00e7\u00e3o.\"",
+
+                // Proof
+                "proof_title": "Transformando Leads em Protótipos de IA Vivos",
+                "proof_subtitle": "Nosso fluxo de trabalho interno gera demos funcionais e soluções prontas para propostas, com a opção de escalar para sistemas prontos para produção.",
+                "proof_problem_title": "Problema",
+                "proof_problem_desc": "Clientes incertos sobre quem pode entregar.",
+                "proof_solution_title": "Solução",
+                "proof_solution_desc": "Fluxo de trabalho de prototipagem impulsionado por IA.",
+                "proof_outcome_title": "Resultado",
+                "proof_outcome_desc": "Respostas mais rápidas, maior confiança, demos reutilizáveis.",
+                "proof_cta": "Veja uma Demo Funcional",
+
+                // Portfolio
+                "portfolio_title": "Experimentos e Prot\u00f3tipos ao Vivo",
+                "portfolio_subtitle": "Estes s\u00e3o prot\u00f3tipos funcionais reais criados durante nosso processo de resolu\u00e7\u00e3o de problemas e pesquisa. Eles demonstram como pensamos, como validamos ideias e como abordamos sistemas de produ\u00e7\u00e3o.",
+                "demo1_title": "Classificador de Tickets IA",
+                "demo1_explores": "Explora: Automa\u00e7\u00e3o de suporte e categoriza\u00e7\u00e3o NLP",
+                "demo1_desc": "Categoriza\u00e7\u00e3o e prioriza\u00e7\u00e3o autom\u00e1tica de tickets de suporte.",
+                "demo1_status": "Status: Prot\u00f3tipo de Pesquisa",
+                "demo2_title": "Dashboard de Previs\u00e3o de Vendas",
+                "demo2_explores": "Explora: An\u00e1lise preditiva e intelig\u00eancia de neg\u00f3cios",
+                "demo2_desc": "Dashboard em tempo real para tend\u00eancias de vendas e proje\u00e7\u00f5es de receita.",
+                "demo2_status": "Status: Prot\u00f3tipo",
+                "demo3_title": "Chatbot de Conhecimento",
+                "demo3_explores": "Explora: Arquitetura RAG e recupera\u00e7\u00e3o de conhecimento",
+                "demo3_desc": "Chatbot IA para respostas instant\u00e2neas de documenta\u00e7\u00e3o interna.",
+                "demo3_status": "Status: Experimento",
+                "demo_cta": "Ver Demo",
+                "portfolio_cta": "Ver Portfólio Completo",
+
+                // Modals (Demo Details)
+                "demo1_modal_title": "Classificador de Tickets IA",
+                "demo1_modal_desc": "Um sistema inteligente que categoriza e prioriza automaticamente tickets de suporte usando Processamento de Linguagem Natural, reduzindo o tempo de triagem manual em 80%.",
+                "demo2_modal_title": "Dashboard de Previsão de Vendas",
+                "demo2_modal_desc": "Um painel em tempo real alimentado por análises preditivas que prevê tendências de vendas, necessidades de estoque e projeções de receita com alta precisão.",
+                "demo3_modal_title": "Protótipo Chatbot de Conhecimento",
+                "demo3_modal_desc": "Um chatbot RAG (Geração Aumentada de Recuperação) que ingere documentação da empresa para responder perguntas dos funcionários instantaneamente, agindo como um segundo cérebro para a organização.",
+
+                // Contact
+                "contact_title": "Vamos Construir Algo Real",
+                "contact_subtitle": "Valide ideias, reduza riscos e veja a IA em ação antes de se comprometer. A dotSat7 também pode levar seu projeto para uma implementação completa pronta para produção.",
 
                 // Services
-                "services_title": "Nossas Soluções",
-                "services_subtitle": "Automação de processos empresariais",
+                "services_title": "Nossas Solu\u00e7\u00f5es",
+                "services_subtitle": "Automa\u00e7\u00e3o de processos empresariais e sistemas inteligentes",
+                "services_backed": "Apoiado por ferramentas internas e fluxos de trabalho de IA que usamos n\u00f3s mesmos.",
                 "service1_title": "Chatbots Inteligentes",
                 "service1_desc": "Typebot, WhatsApp e Web para atendimento e escala.",
                 "service2_title": "Integrações via APIs",
                 "service2_desc": "Conexões entre sistemas para unificar dados e ações.",
                 "service3_title": "Orquestração com n8n",
-                "service3_desc": "Workflows visuais para processos de negócios complexos.",
+                "service3_desc": "Workflows visuais para processos de negócios complexos e fluxos de dados.",
                 "service4_title": "Aplicações de IA",
-                "service4_desc": "Agentes práticos para atendimento e análise.",
+                "service4_desc": "Agentes práticos de IA para suporte, análise e tomada de decisão.",
                 "service5_title": "Backends Inteligentes",
-                "service5_desc": "Backends em Python robustos e inteligentes.",
+                "service5_desc": "Backends robustos baseados em Python projetados para escala e integração de IA.",
 
                 // Diff / About
                 "diff_title": "Por que escolher a dotsat7?",
@@ -1056,7 +1503,12 @@
                 "roi_desc_rate": "Valor hora médio do(s) funcionário(s).",
                 "roi_result_title": "Custo Anual do Trabalho Manual",
                 "roi_savings_label": "Você pode economizar até",
-                "roi_cta": "Pare de Perder Dinheiro →",
+                "roi_cta": "Pare de Perder Dinheiro \u2192",
+
+                // Vision
+                "vision_title": "Sempre construindo, sempre aprendendo",
+                "vision_desc1": "Alguns dos sistemas internos que constru\u00edmos hoje podem evoluir para ofertas futuras. Outros permanecem ferramentas internas que simplesmente nos tornam melhores parceiros.",
+                "vision_desc2": "O que importa \u00e9 que permanecemos curiosos, pragm\u00e1ticos e focados em entregar valor real.",
 
                 // Modals
                 "case1_modal_title": "Suporte Automatizado E-commerce",

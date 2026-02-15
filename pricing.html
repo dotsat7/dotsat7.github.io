@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Engage - dotsat7</title>
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description"
+        content="Learn about dotSat7's flexible engagement models. We adapt our process to your goals, from discovery through production implementation.">
+    <meta property="og:title" content="How We Engage | dotsat7">
+    <meta property="og:description"
+        content="Flexible collaboration models designed around your problem. Learn how dotSat7 adapts to your project needs.">
+    <meta property="og:image" content="https://dotsat7.github.io/images/hero_ai_network.png">
+    <meta property="og:url" content="https://dotsat7.github.io/pricing.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://dotsat7.github.io/images/hero_ai_network.png">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .language-selector {
+            transition: all 0.3s ease;
+        }
+
+        .language-selector:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+        }
+
+        /* Ambient Orbs */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+    <!-- Calendly Widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased bg-slate-900 text-slate-50 selection:bg-purple-500 selection:text-white">
+    <!-- Navigation -->
+    <nav class="bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="images/dotsat_logo.png" alt="dotsat7 Logo" class="h-16 w-auto mr-3 rounded-full">
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                        <a href="index.html#services"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_services">Services</a>
+                        <a href="protovision.html"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_protovision">ProtoVision</a>
+                        <a href="pricing.html"
+                            class="text-white px-3 py-2 text-sm font-bold border-b-2 border-purple-500 transition-colors"
+                            data-i18n="nav_pricing">Pricing</a>
+                        <a href="index.html#about"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_about">About</a>
+                        <a href="index.html#contact"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_contact">Contact</a>
+                        <div class="flex space-x-2">
+                            <button onclick="changeLanguage('en')"
+                                class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700">
+                                <span class="mr-1">🇺🇸</span>
+                            </button>
+                            <button onclick="changeLanguage('pt')"
+                                class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700">
+                                <span class="mr-1">🇧🇷</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex items-center md:hidden">
+                        <button type="button" id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                            <i data-feather="menu"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-20 bg-slate-900/95 backdrop-blur-xl pt-16">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html#services"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_services">Services</a>
+            <a href="protovision.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_protovision">ProtoVision</a>
+            <a href="pricing.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-white bg-slate-800 hover:bg-slate-700 transition-colors"
+                data-i18n="nav_pricing">Pricing</a>
+            <a href="index.html#about"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_about">About</a>
+            <a href="index.html#contact"
+                class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-purple-400 hover:bg-slate-800 transition-colors"
+                data-i18n="nav_contact">Contact</a>
+            <div class="flex space-x-2 px-3 py-2">
+                <button onclick="changeLanguage('en')"
+                    class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700 text-slate-300">
+                    <span class="mr-1">🇺🇸</span> EN
+                </button>
+                <button onclick="changeLanguage('pt')"
+                    class="language-selector px-3 py-1 rounded-full bg-slate-800 text-sm font-medium flex items-center border border-slate-700 text-slate-300">
+                    <span class="mr-1">🇧🇷</span> PT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-white relative">
+        <div
+            class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 glow-text bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 leading-tight"
+                    data-i18n="engage_hero_title">
+                    How We Engage
+                </h1>
+                <p class="text-xl mb-8 text-slate-300 leading-relaxed max-w-3xl mx-auto"
+                    data-i18n="engage_hero_subtitle">
+                    Flexible collaboration models designed around your problem — not fixed packages.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Paragraph -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-slate-900">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <p class="text-2xl text-slate-200 mb-6 font-semibold" data-i18n="engage_intro_p1">
+                Every project is different.
+            </p>
+            <p class="text-lg text-slate-400 leading-relaxed" data-i18n="engage_intro_p2">
+                At dotSat7, we adapt our engagement based on your goals, constraints, and technical complexity.
+                We focus on reducing uncertainty early, then delivering production-ready systems with confidence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Engagement Phases Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center" data-i18n="engage_phases_title">
+                Our Engagement Process
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Phase 1: Discovery & Understanding -->
+                <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-purple-500 transition duration-300"
+                    data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-purple-900/40 rounded-lg text-purple-400 mr-4">
+                            <i data-feather="compass" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-purple-400 text-sm font-bold uppercase tracking-wide">Phase 1</span>
+                            <h3 class="text-xl font-bold text-white" data-i18n="engage_phase1_title">
+                                Discovery & Understanding
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="engage_phase1_desc">
+                        We start by understanding the problem, constraints, and success criteria.
+                        This phase aligns expectations and uncovers risks early.
+                    </p>
+                </div>
+
+                <!-- Phase 2: Prototype & Validation -->
+                <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-cyan-500 transition duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400 mr-4">
+                            <i data-feather="zap" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-cyan-400 text-sm font-bold uppercase tracking-wide">Phase 2</span>
+                            <h3 class="text-xl font-bold text-white" data-i18n="engage_phase2_title">
+                                Prototype & Validation
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="engage_phase2_desc">
+                        When appropriate, we validate ideas through lightweight prototypes or technical experiments
+                        to ensure feasibility before full investment.
+                    </p>
+                </div>
+
+                <!-- Phase 3: Production Implementation -->
+                <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-green-500 transition duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-green-900/40 rounded-lg text-green-400 mr-4">
+                            <i data-feather="code" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-green-400 text-sm font-bold uppercase tracking-wide">Phase 3</span>
+                            <h3 class="text-xl font-bold text-white" data-i18n="engage_phase3_title">
+                                Production Implementation
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="engage_phase3_desc">
+                        Once direction is clear, we implement secure, scalable, and maintainable production systems.
+                    </p>
+                </div>
+
+                <!-- Phase 4: Support & Evolution (Optional) -->
+                <div class="p-8 bg-slate-800 rounded-xl border border-slate-700 hover:border-pink-500 transition duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 bg-pink-900/40 rounded-lg text-pink-400 mr-4">
+                            <i data-feather="trending-up" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-pink-400 text-sm font-bold uppercase tracking-wide">Phase 4</span>
+                            <h3 class="text-xl font-bold text-white" data-i18n="engage_phase4_title">
+                                Support & Evolution
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed mb-2" data-i18n="engage_phase4_desc">
+                        We can continue supporting, improving, and scaling the solution as your needs evolve.
+                    </p>
+                    <span class="text-sm text-slate-500 italic" data-i18n="engage_phase4_optional">(Optional)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Principles Block -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center" data-i18n="engage_principles_title">
+                Key Principles
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-1 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-lg" data-i18n="engage_principle1">No fixed packages</p>
+                </div>
+                <div class="flex items-start">
+                    <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-1 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-lg" data-i18n="engage_principle2">No one-size-fits-all pricing</p>
+                </div>
+                <div class="flex items-start">
+                    <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-1 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-lg" data-i18n="engage_principle3">Focus on clarity before complexity
+                    </p>
+                </div>
+                <div class="flex items-start">
+                    <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-1 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-lg" data-i18n="engage_principle4">Engineering decisions backed by
+                        validation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-4" data-i18n="engage_cta_title">Have a challenge in mind?</h2>
+            <p class="text-xl text-slate-400 mb-8" data-i18n="engage_cta_subtitle">Let's talk about the right way to
+                approach it.</p>
+            <div class="flex justify-center">
+                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dotsat7/30min'});return false;"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-bold transition duration-300 shadow-lg shadow-purple-500/30 ring-1 ring-purple-500"
+                    data-i18n="engage_cta_button">Contact dotSat7</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm" data-i18n="footer_copyright">© 2025 dotsat7. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        const translations = {
+            en: {
+                "nav_services": "Services",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "How We Engage",
+                "nav_about": "About",
+                "nav_contact": "Contact",
+
+                "engage_hero_title": "How We Engage",
+                "engage_hero_subtitle": "Flexible collaboration models designed around your problem — not fixed packages.",
+
+                "engage_intro_p1": "Every project is different.",
+                "engage_intro_p2": "At dotSat7, we adapt our engagement based on your goals, constraints, and technical complexity. We focus on reducing uncertainty early, then delivering production-ready systems with confidence.",
+
+                "engage_phases_title": "Our Engagement Process",
+                "engage_phase1_title": "Discovery & Understanding",
+                "engage_phase1_desc": "We start by understanding the problem, constraints, and success criteria. This phase aligns expectations and uncovers risks early.",
+                "engage_phase2_title": "Prototype & Validation",
+                "engage_phase2_desc": "When appropriate, we validate ideas through lightweight prototypes or technical experiments to ensure feasibility before full investment.",
+                "engage_phase3_title": "Production Implementation",
+                "engage_phase3_desc": "Once direction is clear, we implement secure, scalable, and maintainable production systems.",
+                "engage_phase4_title": "Support & Evolution",
+                "engage_phase4_desc": "We can continue supporting, improving, and scaling the solution as your needs evolve.",
+                "engage_phase4_optional": "(Optional)",
+
+                "engage_principles_title": "Key Principles",
+                "engage_principle1": "No fixed packages",
+                "engage_principle2": "No one-size-fits-all pricing",
+                "engage_principle3": "Focus on clarity before complexity",
+                "engage_principle4": "Engineering decisions backed by validation",
+
+                "engage_cta_title": "Have a challenge in mind?",
+                "engage_cta_subtitle": "Let's talk about the right way to approach it.",
+                "engage_cta_button": "Contact dotSat7",
+
+                "footer_copyright": "© 2025 dotsat7. All rights reserved."
+            },
+            pt: {
+                "nav_services": "Serviços",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "Como atuamos",
+                "nav_about": "Sobre",
+                "nav_contact": "Contato",
+
+                "engage_hero_title": "Como atuamos",
+                "engage_hero_subtitle": "Modelos de colaboração flexíveis projetados em torno do seu problema — não pacotes fixos.",
+
+                "engage_intro_p1": "Cada projeto é diferente.",
+                "engage_intro_p2": "Na dotSat7, adaptamos nosso engajamento com base em seus objetivos, restrições e complexidade técnica. Focamos em reduzir incertezas cedo e, em seguida, entregar sistemas prontos para produção com confiança.",
+
+                "engage_phases_title": "Nosso Processo de Engajamento",
+                "engage_phase1_title": "Descoberta e Compreensão",
+                "engage_phase1_desc": "Começamos compreendendo o problema, as restrições e os critérios de sucesso. Esta fase alinha expectativas e descobre riscos desde cedo.",
+                "engage_phase2_title": "Protótipo e Validação",
+                "engage_phase2_desc": "Quando apropriado, validamos ideias através de protótipos leves ou experimentos técnicos para garantir viabilidade antes do investimento total.",
+                "engage_phase3_title": "Implementação de Produção",
+                "engage_phase3_desc": "Uma vez que a direção está clara, implementamos sistemas de produção seguros, escaláveis e sustentáveis.",
+                "engage_phase4_title": "Suporte e Evolução",
+                "engage_phase4_desc": "Podemos continuar apoiando, melhorando e escalando a solução conforme suas necessidades evoluem.",
+                "engage_phase4_optional": "(Opcional)",
+
+                "engage_principles_title": "Princípios-Chave",
+                "engage_principle1": "Sem pacotes fixos",
+                "engage_principle2": "Sem preços únicos para todos",
+                "engage_principle3": "Foco na clareza antes da complexidade",
+                "engage_principle4": "Decisões de engenharia apoiadas por validação",
+
+                "engage_cta_title": "Tem um desafio em mente?",
+                "engage_cta_subtitle": "Vamos conversar sobre a maneira certa de abordá-lo.",
+                "engage_cta_button": "Fale com dotSat7",
+
+                "footer_copyright": "© 2025 dotsat7. Todos os direitos reservados."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update active language button styling
+            document.querySelectorAll('.language-selector').forEach(button => {
+                button.classList.remove('bg-purple-600', 'text-white', 'ring-2', 'ring-purple-400', 'shadow-lg');
+                button.classList.add('bg-slate-800', 'text-slate-400');
+            });
+
+            // Highlight the active language button by checking onclick attribute
+            const langButtons = document.querySelectorAll('.language-selector');
+            langButtons.forEach(button => {
+                const onclickAttr = button.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.includes(`'${lang}'`)) {
+                    button.classList.remove('bg-slate-800', 'text-slate-400');
+                    button.classList.add('bg-purple-600', 'text-white', 'ring-2', 'ring-purple-400', 'shadow-lg');
+                }
+            });
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        changeLanguage(preferredLanguage);
+    </script>
+    <!-- Calendly Widget JS -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+
+</html>
