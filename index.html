@@ -153,6 +153,67 @@
         .animation-delay-4000 {
             animation-delay: 4s;
         }
+
+        /* Power of 7 Section */
+        .power-dot {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .principle-card {
+            position: relative;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+        }
+
+        .principle-card:hover .power-dot {
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.6), 0 4px 14px rgba(249, 115, 22, 0.25);
+            transform: scale(1.05);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Connecting line to center on hover (Desktop only) */
+        @media (min-width: 768px) {
+            .principle-card::before {
+                content: '';
+                position: absolute;
+                top: 28px;
+                left: 28px;
+                width: 1px;
+                height: 0;
+                background: linear-gradient(to bottom, rgba(249, 115, 22, 0.4), transparent);
+                opacity: 0;
+                transition: all 0.5s ease;
+                z-index: 1;
+            }
+
+            .principle-card:hover::before {
+                opacity: 1;
+                height: 100px;
+            }
+        }
+
+        /* Background dots SVG pattern */
+        .bg-dots-pattern {
+            background-image: radial-gradient(circle, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
     </style>
     <!-- Calendly Widget CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -649,6 +710,113 @@
         </div>
     </section>
 
+    <!-- Power of 7 Section -->
+    <section id="power-of-7"
+        class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 relative overflow-hidden border-t border-slate-800">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 bg-dots-pattern opacity-20"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="power7_title">
+                    The Power of 7
+                </h2>
+                <p class="text-lg text-slate-300 max-w-3xl mx-auto" data-i18n="power7_subtitle">
+                    Seven principles that guide how we think, build, and evolve at dotSat7.
+                </p>
+            </div>
+
+            <!-- Principles Grid -->
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+                <!-- Principle 1: Start With the Dot -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="100">
+                    <div class="power-dot mb-6">1</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle1_title">
+                        Start With the Dot
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle1_desc">
+                        Every system begins with a signal. Before tools, models, or platforms, we focus on the real
+                        problem that matters. If the dot isn't real, the solution won't be either.
+                    </p>
+                </div>
+
+                <!-- Principle 2: Connect Before You Automate -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="200">
+                    <div class="power-dot mb-6">2</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle2_title">
+                        Connect Before You Automate
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle2_desc">
+                        Automation without understanding creates noise. We connect context, data, and intent before
+                        anything runs automatically. Clarity first. Speed second.
+                    </p>
+                </div>
+
+                <!-- Principle 3: Learn in Public -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="300">
+                    <div class="power-dot mb-6">3</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle3_title">
+                        Learn in Public
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle3_desc">
+                        Progress beats perfection. We prototype early, share insights, and improve continuously. If
+                        we're not learning, we're already behind.
+                    </p>
+                </div>
+
+                <!-- Principle 4: Build for Humans -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="400">
+                    <div class="power-dot mb-6">4</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle4_title">
+                        Build for Humans
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle4_desc">
+                        AI should reduce cognitive load, not add to it. Our goal is better decisions for real people —
+                        not impressive demos. Technology succeeds when it fades into the background.
+                    </p>
+                </div>
+
+                <!-- Principle 5: Value Before Revenue -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="500">
+                    <div class="power-dot mb-6">5</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle5_title">
+                        Value Before Revenue
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle5_desc">
+                        The first dollar is earned, not forced. We hunt the first $1 as proof that real value was
+                        delivered. Money follows meaning.
+                    </p>
+                </div>
+
+                <!-- Principle 6: Small Systems, Big Leverage -->
+                <div class="principle-card flex flex-col items-start" data-aos="fade-up" data-aos-delay="600">
+                    <div class="power-dot mb-6">6</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle6_title">
+                        Small Systems, Big Leverage
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle6_desc">
+                        The smallest change can unlock the largest outcome. We favor narrow scope, clear ownership, and
+                        compounding effects. Leverage beats scale.
+                    </p>
+                </div>
+
+                <!-- Principle 7: Never Kill the Dream -->
+                <div class="principle-card flex flex-col items-start md:col-span-2 md:max-w-lg md:mx-auto"
+                    data-aos="fade-up" data-aos-delay="700">
+                    <div class="power-dot mb-6">7</div>
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="principle7_title">
+                        Never Kill the Dream
+                    </h3>
+                    <p class="text-slate-300 leading-relaxed" data-i18n="principle7_desc">
+                        Failure is an event, not an identity. dotsat7 exists because some ideas deserve more than one
+                        lifetime. We accept restarts — but we never quit on purpose.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Tech Stack Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
         <div class="max-w-7xl mx-auto">
@@ -1005,7 +1173,7 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">Let’s Build Something Real</h2>
                 <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-i18n="contact_subtitle">
-                    Validate ideas, reduce risk, and see AI in action before committing. dotSat7 can also take your
+                    Validate ideas, reduce risk, and see AI in action before committing. dotsat7 can also take your
                     project to full production-ready deployment.
                 </p>
             </div>
@@ -1193,7 +1361,7 @@
 
                 //Hero
                 "hero_title": "Turning complex ideas into production-ready systems.",
-                "hero_subtitle": "At dotSat7, we help businesses use AI and modern technology to scale sustainably — from early concepts to real-world implementation.",
+                "hero_subtitle": "At dotsat7, we help businesses use AI and modern technology to scale sustainably — from early concepts to real-world implementation.",
                 "hero_supporting": "We design, prototype, and deliver solutions end to end, so technology accelerates your business instead of slowing it down.",
                 "hero_cta_primary": "See how we work",
 
@@ -1201,7 +1369,7 @@
                 "intro_small_title": "AI is powerful — but it shouldn't be a distraction",
                 "intro_p1": "AI is changing every industry.",
                 "intro_p2": "It allows businesses to scale in ways that were hard to imagine just a few years ago — but learning, integrating, and maintaining AI systems can quickly become overwhelming.",
-                "intro_p3": "At dotSat7, we take on that complexity for you.",
+                "intro_p3": "At dotsat7, we take on that complexity for you.",
                 "intro_p4": "We use AI as a practical engineering tool to design, prototype, and implement solutions in a sustainable way, so you can focus on running and growing your business — not on wiring chatbots, connecting APIs, or chasing the latest tools.",
 
                 // How We Work
@@ -1220,11 +1388,29 @@
 
                 // Internal Innovation
                 "innovation_title": "Building our own tools to build better for you",
-                "innovation_desc1": "At dotSat7, we don't wait for perfect tools.",
+                "innovation_desc1": "At dotsat7, we don't wait for perfect tools.",
                 "innovation_desc2": "When we face recurring challenges \u2014 evaluating ideas, prototyping quickly, or validating solutions \u2014 we build internal AI-driven workflows to help us move faster and make better decisions.",
                 "innovation_desc3": "Some of these internal systems power the live demos and experiments you'll see here.",
                 "innovation_callout_title": "Risk Reduction First",
                 "innovation_callout_text": "\"This is how we reduce risk before writing production code.\"",
+
+                // Power of 7
+                "power7_title": "The Power of 7",
+                "power7_subtitle": "Seven principles that guide how we think, build, and evolve at dotsat7.",
+                "principle1_title": "Start With the Dot",
+                "principle1_desc": "Every system begins with a signal. Before tools, models, or platforms, we focus on the real problem that matters. If the dot isn't real, the solution won't be either.",
+                "principle2_title": "Connect Before You Automate",
+                "principle2_desc": "Automation without understanding creates noise. We connect context, data, and intent before anything runs automatically. Clarity first. Speed second.",
+                "principle3_title": "Learn in Public",
+                "principle3_desc": "Progress beats perfection. We prototype early, share insights, and improve continuously. If we're not learning, we're already behind.",
+                "principle4_title": "Build for Humans",
+                "principle4_desc": "A IA deve reduzir a carga mental, não aumentá-la. Nosso objetivo é melhorar decisões reais para pessoas reais — não criar demos impressionantes. A tecnologia é bem-sucedida quando desaparece em segundo plano.",
+                "principle5_title": "Value Before Revenue",
+                "principle5_desc": "The first dollar is earned, not forced. We hunt the first $1 as proof that real value was delivered. Money follows meaning.",
+                "principle6_title": "Small Systems, Big Leverage",
+                "principle6_desc": "The smallest change can unlock the largest outcome. We favor narrow scope, clear ownership, and compounding effects. Leverage beats scale.",
+                "principle7_title": "Never Kill the Dream",
+                "principle7_desc": "Fracasso é um evento, não uma identidade. A dotsat7 existe porque algumas ideias merecem mais de uma chance. Aceitamos recomeços — mas nunca desistimos por princípio.",
 
                 // Proof
                 "proof_title": "Turning Freelance Leads into Live AI Prototypes",
@@ -1265,7 +1451,7 @@
 
                 // Contact
                 "contact_title": "Let’s Build Something Real",
-                "contact_subtitle": "Validate ideas, reduce risk, and see AI in action before committing. dotSat7 can also take your project to full production-ready deployment.",
+                "contact_subtitle": "Validate ideas, reduce risk, and see AI in action before committing. dotsat7 can also take your project to full production-ready deployment.",
 
                 // Services
                 "services_title": "Our Solutions",
@@ -1359,7 +1545,7 @@
 
                 // Hero
                 "hero_title": "Transformando ideias complexas em sistemas prontos para produção.",
-                "hero_subtitle": "Na dotSat7, ajudamos empresas a usar IA e tecnologia moderna para escalar de forma sustentável — desde conceitos iniciais até implementação real.",
+                "hero_subtitle": "Na dotsat7, ajudamos empresas a usar IA e tecnologia moderna para escalar de forma sustentável — desde conceitos iniciais até implementação real.",
                 "hero_supporting": "Projetamos, prototipamos e entregamos soluções de ponta a ponta, para que a tecnologia acelere seu negócio ao invés de desacelerá-lo.",
                 "hero_cta_primary": "Veja como trabalhamos",
 
@@ -1367,7 +1553,7 @@
                 "intro_small_title": "IA é poderosa — mas não deveria ser uma distração",
                 "intro_p1": "A IA está mudando todas as indústrias.",
                 "intro_p2": "Ela permite que empresas escalem de maneiras difíceis de imaginar há apenas alguns anos — mas aprender, integrar e manter sistemas de IA pode rapidamente se tornar esmagador.",
-                "intro_p3": "Na dotSat7, assumimos essa complexidade para você.",
+                "intro_p3": "Na dotsat7, assumimos essa complexidade para você.",
                 "intro_p4": "Usamos IA como uma ferramenta prática de engenharia para projetar, prototipar e implementar soluções de forma sustentável, para que você possa focar em administrar e expandir seu negócio — não em conectar chatbots, APIs ou perseguir as últimas ferramentas.",
                 "hero_vision": "Empresa Primeiro, Capacidade Segundo",
                 "hero_cta_primary": "Veja como constru\u00edmos",
@@ -1389,11 +1575,28 @@
 
                 // Internal Innovation
                 "innovation_title": "Construindo nossas pr\u00f3prias ferramentas para construir melhor para voc\u00ea",
-                "innovation_desc1": "Na dotSat7, n\u00e3o esperamos por ferramentas perfeitas.",
+                "innovation_desc1": "Na dotsat7, n\u00e3o esperamos por ferramentas perfeitas.",
                 "innovation_desc2": "Quando enfrentamos desafios recorrentes \u2014 avaliar ideias, prototipar rapidamente ou validar solu\u00e7\u00f5es \u2014 constru\u00edmos fluxos de trabalho internos impulsionados por IA para nos ajudar a avan\u00e7ar mais r\u00e1pido e tomar melhores decis\u00f5es.",
                 "innovation_desc3": "Alguns desses sistemas internos alimentam as demos ao vivo e experimentos que voc\u00ea ver\u00e1 aqui.",
                 "innovation_callout_title": "Redu\u00e7\u00e3o de Risco Primeiro",
                 "innovation_callout_text": "\"\u00c9 assim que reduzimos riscos antes de escrever c\u00f3digo de produ\u00e7\u00e3o.\"",
+                // Power of 7
+                "power7_title": "O Poder do 7",
+                "power7_subtitle": "Sete princípios que orientam como pensamos, construímos e evoluímos na dotsat7.",
+                "principle1_title": "Comece pelo Ponto",
+                "principle1_desc": "Todo sistema começa com um sinal. Antes de ferramentas, modelos ou plataformas, focamos no problema real que importa. Se o ponto não for real, a solução também não será.",
+                "principle2_title": "Conecte Antes de Automatizar",
+                "principle2_desc": "Automação sem entendimento gera ruído. Conectamos contexto, dados e intenção antes de qualquer coisa rodar sozinha. Clareza primeiro. Velocidade depois.",
+                "principle3_title": "Aprenda em Público",
+                "principle3_desc": "Progresso é mais importante que perfeição. Prototipamos cedo, compartilhamos aprendizados e evoluímos continuamente. Se não estamos aprendendo, já estamos ficando para trás.",
+                "principle4_title": "Construa para Pessoas",
+                "principle4_desc": "A IA deve reduzir a carga mental, não aumentá-la. Nosso objetivo é melhorar decisões reais para pessoas reais — não criar demos impressionantes. A tecnologia é bem-sucedida quando desaparece em segundo plano.",
+                "principle5_title": "Valor Antes da Receita",
+                "principle5_desc": "O primeiro dólar é conquistado, não forçado. Caçamos o primeiro $1 como prova de que valor real foi entregue. O dinheiro segue o significado.",
+                "principle6_title": "Sistemas Pequenos, Grande Alavancagem",
+                "principle6_desc": "A menor mudança pode gerar o maior impacto. Preferimos escopo reduzido, responsabilidade clara e efeitos que se acumulam com o tempo. Alavancagem vence escala.",
+                "principle7_title": "Nunca Mate o Sonho",
+                "principle7_desc": "Fracasso é um evento, não uma identidade. A dotsat7 existe porque algumas ideias merecem mais de uma chance. Aceitamos recomeços — mas nunca desistimos por princípio.",
 
                 // Proof
                 "proof_title": "Transformando Leads em Protótipos de IA Vivos",
@@ -1434,7 +1637,7 @@
 
                 // Contact
                 "contact_title": "Vamos Construir Algo Real",
-                "contact_subtitle": "Valide ideias, reduza riscos e veja a IA em ação antes de se comprometer. A dotSat7 também pode levar seu projeto para uma implementação completa pronta para produção.",
+                "contact_subtitle": "Valide ideias, reduza riscos e veja a IA em ação antes de se comprometer. A dotsat7 também pode levar seu projeto para uma implementação completa pronta para produção.",
 
                 // Services
                 "services_title": "Nossas Solu\u00e7\u00f5es",
