@@ -31,6 +31,7 @@
                         <a href="index.html" class="flex items-center">
                             <img src="images/dotsat_logo.png" alt="dotsat7 Logo" class="h-16 w-auto mr-3 rounded-full">
                         </a>
+
                     </div>
                     <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
                         <a href="index.html#services"
@@ -80,6 +81,12 @@
                     class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
                     AI Ticket Classifier
                 </h1>
+
+                <button onclick="openArchModal()"
+                    class="flex items-center px-4 py-2 bg-purple-900/20 rounded-lg text-sm text-purple-400 border border-purple-500/50 hover:bg-purple-900/40 transition-colors mb-4">
+                    <i data-feather="layers" class="w-4 h-4 mr-2"></i>
+                    View Architecture
+                </button>
                 <p class="text-slate-300 text-lg leading-relaxed">
                     Experience how our NLP engine automatically tags, categorizes, and routes support tickets in
                     real-time.
@@ -159,6 +166,104 @@
             </div>
         </div>
     </main>
+
+    <!-- Architecture Modal -->
+    <div id="archModal" class="fixed inset-0 z-[60] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeArchModal()">
+        </div>
+
+        <!-- Modal Content -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl p-4">
+            <div class="glass-panel rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-600 relative">
+                <button onclick="closeArchModal()"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <i data-feather="cpu" class="text-purple-400 mr-3"></i> System Architecture
+                </h2>
+
+                <!-- Diagram Flow -->
+                <div class="relative overflow-x-auto pb-4">
+                    <div class="flex flex-col md:flex-row items-center justify-between min-w-[600px] gap-4 md:gap-0">
+
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center mb-3 shadow-lg group-hover:border-blue-400 transition-colors">
+                                <i data-feather="mail" class="text-blue-400"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-slate-200">Incoming Ticket</div>
+                            <div class="text-xs text-slate-500">Email / Form</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block h-0.5 w-12 bg-slate-700 relative">
+                            <div
+                                class="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-slate-700 transform rotate-45">
+                            </div>
+                        </div>
+                        <div class="md:hidden h-8 w-0.5 bg-slate-700 relative"></div>
+
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center mb-3 shadow-lg group-hover:border-purple-400 transition-colors">
+                                <i data-feather="server" class="text-purple-400"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-slate-200">API Gateway</div>
+                            <div class="text-xs text-slate-500">REST / GraphQL</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block h-0.5 w-12 bg-slate-700 relative">
+                            <div
+                                class="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-slate-700 transform rotate-45">
+                            </div>
+                        </div>
+                        <div class="md:hidden h-8 w-0.5 bg-slate-700 relative"></div>
+
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 border border-purple-500/50 flex items-center justify-center mb-3 shadow-lg group-hover:border-purple-400 transition-colors relative overflow-hidden">
+                                <div class="absolute inset-0 bg-purple-500/10 animate-pulse"></div>
+                                <i data-feather="Zap" class="text-white relative z-10"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-white">NLP Engine</div>
+                            <div class="text-xs text-purple-300">Classification Model</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden md:block h-0.5 w-12 bg-slate-700 relative">
+                            <div
+                                class="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-slate-700 transform rotate-45">
+                            </div>
+                        </div>
+                        <div class="md:hidden h-8 w-0.5 bg-slate-700 relative"></div>
+
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-slate-800 border border-slate-600 flex items-center justify-center mb-3 shadow-lg group-hover:border-green-400 transition-colors">
+                                <i data-feather="check-circle" class="text-green-400"></i>
+                            </div>
+                            <div class="text-sm font-semibold text-slate-200">Action</div>
+                            <div class="text-xs text-slate-500">Route / Auto-Reply</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-700/50 text-sm text-slate-400">
+                    <p><strong class="text-slate-200">Tech Stack:</strong> Python, FastAPI, TensorFlow/PyTorch, Redis
+                        (Queue), PostgreSQL.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         feather.replace();
@@ -247,6 +352,15 @@
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
         });
+
+        function openArchModal() {
+            document.getElementById('archModal').classList.remove('hidden');
+            feather.replace();
+        }
+
+        function closeArchModal() {
+            document.getElementById('archModal').classList.add('hidden');
+        }
     </script>
 </body>
 
