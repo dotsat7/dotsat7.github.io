@@ -917,23 +917,33 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Demo 1: AI Ticket Classifier -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500 cursor-pointer group flex flex-col"
-                    data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-case="demo1"
-                    data-title="AI Ticket Classifier"
-                    data-desc="An intelligent system that automatically categorizes and prioritizes support tickets using Natural Language Processing, reducing manual triage time by 80%."
-                    data-image="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=800">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-purple-500 group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-purple-900/40 rounded-lg text-purple-400 group-hover:scale-110 transition-transform">
                             <i data-feather="tag" class="w-6 h-6"></i>
                         </div>
                     </div>
-                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo1_title">AI Ticket Classifier</h5>
-                    <p class="text-sm text-purple-400 mb-3 font-medium" data-i18n="demo1_explores">Explores: Support
-                        automation & NLP categorization</p>
-                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo1_desc">Automated categorization and
-                        prioritization of support tickets.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
+                    <h5 class="text-lg font-bold text-white mb-4" data-i18n="demo1_title">AI Ticket Classifier</h5>
+
+                    <div class="space-y-3 mb-6 flex-grow">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Problem</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo1_problem">High volume of support tickets,
+                                manual triage is slow.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Thinking Pattern</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo1_pattern">Classification & Routing</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Engagement</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo1_engagement">Interactive Demo</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
                         <span
                             class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full border border-purple-500/30">Python</span>
                         <span
@@ -941,36 +951,44 @@
                         <span
                             class="px-2 py-1 bg-purple-900/40 text-purple-300 text-xs rounded-full border border-purple-500/30">NLP</span>
                     </div>
+
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-slate-500 uppercase tracking-wide"
-                                data-i18n="demo1_status">Status: Research Prototype</span>
-                            <span class="text-purple-400 font-bold flex items-center text-sm">
-                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
-                                    class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
+                        <a href="ai-ticket-classifier.html"
+                            class="text-purple-400 font-bold flex items-center text-sm hover:text-purple-300 transition-colors">
+                            <span data-i18n="demo_cta">Interactive Proofs</span> <i data-feather="arrow-right"
+                                class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Demo 2: Sales Forecast Dashboard -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500 cursor-pointer group flex flex-col"
-                    data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-case="demo2"
-                    data-title="Sales Forecast Dashboard"
-                    data-desc="A real-time dashboard powered by predictive analytics that forecasts sales trends, inventory needs, and revenue projections with high accuracy."
-                    data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-cyan-500 group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-cyan-900/40 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform">
                             <i data-feather="bar-chart-2" class="w-6 h-6"></i>
                         </div>
                     </div>
-                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo2_title">Sales Forecast Dashboard</h5>
-                    <p class="text-sm text-cyan-400 mb-3 font-medium" data-i18n="demo2_explores">Explores: Predictive
-                        analytics & business intelligence</p>
-                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo2_desc">Real-time dashboard for sales trends
-                        and revenue projections.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
+                    <h5 class="text-lg font-bold text-white mb-4" data-i18n="demo2_title">Sales Forecast Dashboard</h5>
+
+                    <div class="space-y-3 mb-6 flex-grow">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Problem</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo2_problem">Unpredictable revenue, manual
+                                spreadsheet errors.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Thinking Pattern</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo2_pattern">Predictive Analytics</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Engagement</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo2_engagement">Interactive Dashboard</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
                         <span
                             class="px-2 py-1 bg-cyan-900/40 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Python</span>
                         <span
@@ -978,36 +996,45 @@
                         <span
                             class="px-2 py-1 bg-cyan-900/40 text-cyan-300 text-xs rounded-full border border-cyan-500/30">Analytics</span>
                     </div>
+
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-slate-500 uppercase tracking-wide"
-                                data-i18n="demo2_status">Status: Prototype</span>
-                            <span class="text-cyan-400 font-bold flex items-center text-sm">
-                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
-                                    class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
+                        <a href="sales-forecast-dashboard.html"
+                            class="text-cyan-400 font-bold flex items-center text-sm hover:text-cyan-300 transition-colors">
+                            <span data-i18n="demo_cta">Interactive Proofs</span> <i data-feather="arrow-right"
+                                class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Demo 3: Knowledge Chatbot Prototype -->
-                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500 cursor-pointer group flex flex-col"
-                    data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-case="demo3"
-                    data-title="Knowledge Chatbot Prototype"
-                    data-desc="A RAG (Retrieval-Augmented Generation) chatbot that ingests company documentation to answer employee questions instantly, acting as a second brain for the organization."
-                    data-image="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=800">
+                <div class="bg-slate-800/60 p-8 rounded-xl border border-slate-700 backdrop-blur-md shadow-lg transition duration-300 hover:border-pink-500 group flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-6">
                         <div
                             class="p-3 bg-pink-900/40 rounded-lg text-pink-400 group-hover:scale-110 transition-transform">
                             <i data-feather="message-square" class="w-6 h-6"></i>
                         </div>
                     </div>
-                    <h5 class="text-lg font-bold text-white mb-2" data-i18n="demo3_title">Knowledge Chatbot</h5>
-                    <p class="text-sm text-pink-400 mb-3 font-medium" data-i18n="demo3_explores">Explores: RAG
-                        architecture & knowledge retrieval</p>
-                    <p class="text-slate-400 mb-4 flex-grow" data-i18n="demo3_desc">AI chatbot for instant internal
-                        documentation answers.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
+                    <h5 class="text-lg font-bold text-white mb-4" data-i18n="demo3_title">Knowledge Chatbot</h5>
+
+                    <div class="space-y-3 mb-6 flex-grow">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Problem</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo3_problem">Information silos, employees
+                                can't find answers.</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Thinking Pattern</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo3_pattern">RAG (Retrieval Augmented
+                                Generation)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Engagement</p>
+                            <p class="text-slate-300 text-sm" data-i18n="demo3_engagement">Chat Interface</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
                         <span
                             class="px-2 py-1 bg-pink-900/40 text-pink-300 text-xs rounded-full border border-pink-500/30">LangChain</span>
                         <span
@@ -1015,15 +1042,13 @@
                         <span
                             class="px-2 py-1 bg-pink-900/40 text-pink-300 text-xs rounded-full border border-pink-500/30">OpenAI</span>
                     </div>
+
                     <div class="border-t border-slate-700 pt-4 mt-auto">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-slate-500 uppercase tracking-wide"
-                                data-i18n="demo3_status">Status: Experiment</span>
-                            <span class="text-pink-400 font-bold flex items-center text-sm">
-                                <span data-i18n="demo_cta">View Demo</span> <i data-feather="external-link"
-                                    class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
+                        <a href="knowledge-chatbot.html"
+                            class="text-pink-400 font-bold flex items-center text-sm hover:text-pink-300 transition-colors">
+                            <span data-i18n="demo_cta">Interactive Proofs</span> <i data-feather="arrow-right"
+                                class="w-4 h-4 ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1438,7 +1463,16 @@
                 "demo3_explores": "Explores: RAG architecture & knowledge retrieval",
                 "demo3_desc": "AI chatbot for instant internal documentation answers.",
                 "demo3_status": "Status: Experiment",
-                "demo_cta": "View Demo",
+                "demo1_problem": "High volume of support tickets, manual triage is slow.",
+                "demo1_pattern": "Classification & Routing",
+                "demo1_engagement": "Interactive Demo",
+                "demo2_problem": "Unpredictable revenue, manual spreadsheet errors.",
+                "demo2_pattern": "Predictive Analytics",
+                "demo2_engagement": "Interactive Dashboard",
+                "demo3_problem": "Information silos, employees can't find answers.",
+                "demo3_pattern": "RAG (Retrieval Augmented Generation)",
+                "demo3_engagement": "Chat Interface",
+                "demo_cta": "Interactive Proofs",
                 "portfolio_cta": "View Full Portfolio",
 
                 // Modals (Demo Details)
@@ -1719,7 +1753,17 @@
                 "case2_modal_title": "Pipeline de Faturas Logísticas",
                 "case2_modal_desc": "Um workflow n8n completo que monitora e-mails em busca de faturas, usa OCR para extrair dados, valida contra pedidos de compra (POs) e faz upload automático no sistema ERP.",
                 "case3_modal_title": "Qualificação de Leads SaaS",
-                "case3_modal_desc": "Um agente de vendas de IA incorporado ao site que engaja visitantes 24/7, qualifica-os com base em orçamento e necessidade, e agendou reuniões diretamente no calendário da equipe de vendas."
+                "case3_modal_desc": "Um agente de vendas de IA incorporado ao site que engaja visitantes 24/7, qualifica-os com base em orçamento e necessidade, e agendou reuniões diretamente no calendário da equipe de vendas.",
+                "demo1_problem": "Alto volume de chamados de suporte, triagem manual lenta.",
+                "demo1_pattern": "Classificação e Roteamento",
+                "demo1_engagement": "Demo Interativa",
+                "demo2_problem": "Receita imprevisível, erros manuais em planilhas.",
+                "demo2_pattern": "Análise Preditiva",
+                "demo2_engagement": "Dashboard Interativo",
+                "demo3_problem": "Silos de informação, funcionários não encontram respostas.",
+                "demo3_pattern": "RAG (Geração Aumentada por Recuperação)",
+                "demo3_engagement": "Interface de Chat",
+                "demo_cta": "Provas Interativas",
             }
         };
 
