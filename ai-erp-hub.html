@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hub for ERP Intelligence - Interactive Proof | dotsat7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        .hero-gradient {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Flow Animation Styles */
+        .flow-step {
+            transition: all 0.5s ease;
+            opacity: 0.4;
+            transform: scale(0.95);
+        }
+
+        .flow-step.active {
+            opacity: 1;
+            transform: scale(1.05);
+            border-color: #a855f7;
+            /* purple-500 */
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .flow-line {
+            transition: all 0.5s ease;
+            width: 0%;
+            background: linear-gradient(90deg, #a855f7, #06b6d4);
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+            }
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-50 font-sans hero-gradient min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-700 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="images/dotsat_logo.png" alt="dotsat7 Logo" class="h-16 w-auto mr-3 rounded-full">
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                        <a href="index.html#services"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_services">Services</a>
+                        <a href="protovision.html"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_protovision">ProtoVision</a>
+                        <a href="pricing.html"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_pricing">Pricing</a>
+                        <a href="index.html#about"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_about">About</a>
+                        <a href="index.html#contact"
+                            class="text-slate-300 hover:text-purple-400 px-3 py-2 text-sm font-medium transition-colors"
+                            data-i18n="nav_contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div
+                class="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-8 animate-fade-in-up">
+                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
+                <span data-i18n="hero_tag">Interactive Proof: AI Hub for ERP Intelligence</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 leading-tight"
+                data-aos="fade-up" data-i18n="hero_title">
+                See how enterprise-grade AI orchestration works — before you build it.
+            </h1>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed" data-aos="fade-up"
+                data-aos-delay="100" data-i18n="hero_subtitle">
+                Connect multiple ERP modules to a centralized AI Hub that dynamically selects specialists, injects
+                client context, controls cost, and scales across tenants — all in real time.
+            </p>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200"
+                data-i18n="hero_p2">
+                No chatbot. No black box. Just architecture you can trust.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="#simulation"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg shadow-purple-500/30 ring-1 ring-purple-500 inline-flex items-center">
+                    <i data-feather="play-circle" class="mr-2"></i> <span data-i18n="hero_cta">Run the Interactive
+                        Proof</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold text-white mb-6" data-i18n="intro_title">Most AI demos show outputs. <br>This
+                Interactive Proof shows
+                the system behind the intelligence.</h2>
+            <p class="text-slate-300 leading-relaxed mb-6" data-i18n="intro_desc">
+                Here, you’ll explore how an AI Hub orchestrates requests coming from ERP systems, applies business
+                context, selects the right expert logic, and delivers governed AI responses at scale.
+            </p>
+            <p class="text-slate-400 italic" data-i18n="intro_italic">
+                Everything you see is simulated — but every design choice is production-grade.
+            </p>
+        </div>
+    </section>
+
+    <!-- Simulation Section -->
+    <section id="simulation" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Controls & Context -->
+                <div class="lg:col-span-1 space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4" data-i18n="sim_title">Orchestration Workflow</h2>
+                        <p class="text-slate-400 mb-6" data-i18n="sim_desc">
+                            Construct a realistic ERP request and watch the AI Hub process it step-by-step.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-xl space-y-6">
+                        <h3 class="text-lg font-bold text-white b-2" data-i18n="sim_step1">1. ERP Context Selection</h3>
+
+                        <!-- Input Selection -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1"
+                                    data-i18n="sim_label_module">ERP Module</label>
+                                <select id="moduleSelect"
+                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                                    <option value="finance">Finance (AP/AR)</option>
+                                    <option value="hr">HR & Payroll</option>
+                                    <option value="supply">Supply Chain</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1"
+                                    data-i18n="sim_label_tenant">Tenant ID</label>
+                                <select id="tenantSelect"
+                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                                    <option value="acme_corp">Acme Corp (Enterprise)</option>
+                                    <option value="start_inc">Start Inc (SME)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-400 mb-1"
+                                    data-i18n="sim_label_intent">User Intent</label>
+                                <textarea id="intentInput" rows="3"
+                                    class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none placeholder-slate-500"
+                                    placeholder="e.g., Analyze the variance in Q3 travel expenses vs budget."></textarea>
+                            </div>
+
+                            <button onclick="runSimulation()"
+                                class="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-purple-900/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center">
+                                <i data-feather="zap" class="mr-2 w-5 h-5"></i> <span data-i18n="sim_btn_run">Run
+                                    Simulation</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Console Log -->
+                    <div class="glass-panel p-4 rounded-xl font-mono text-xs h-64 overflow-y-auto" id="consoleLog">
+                        <div class="text-slate-500 mb-2">// System Logs</div>
+                        <div id="logsContent" class="space-y-1"></div>
+                    </div>
+                </div>
+
+                <!-- Visualizer -->
+                <div class="lg:col-span-2">
+                    <div
+                        class="glass-panel p-8 rounded-2xl h-full relative overflow-hidden flex flex-col justify-between">
+
+                        <!-- Diagram -->
+                        <div class="relative space-y-12 py-8">
+                            <!-- Connecting Line Background -->
+                            <div
+                                class="absolute left-8 top-12 bottom-12 w-1 bg-slate-700 rounded-full z-0 hidden md:block">
+                            </div>
+                            <div id="progressLine"
+                                class="absolute left-8 top-12 w-1 bg-purple-500 rounded-full z-0 hidden md:block transition-all duration-[3000ms] h-0">
+                            </div>
+
+                            <!-- Step 1: Request -->
+                            <div class="relative z-10 flex items-center group flow-step" id="step1">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center flex-shrink-0 shadow-xl relative">
+                                    <i data-feather="arrow-right-circle" class="text-slate-400 w-8 h-8"></i>
+                                    <div class="absolute -right-1 -top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 hidden"
+                                        id="step1-status"></div>
+                                </div>
+                                <div class="ml-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 w-full">
+                                    <h4 class="font-bold text-white text-lg" data-i18n="step1_title">1. Ingest Request
+                                    </h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="step1_desc">ERP Module triggers webhook
+                                        with Tenant ID &
+                                        Payload.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Context -->
+                            <div class="relative z-10 flex items-center group flow-step" id="step2">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center flex-shrink-0 shadow-xl relative">
+                                    <i data-feather="database" class="text-slate-400 w-8 h-8"></i>
+                                    <div class="absolute -right-1 -top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 hidden"
+                                        id="step2-status"></div>
+                                </div>
+                                <div class="ml-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 w-full">
+                                    <h4 class="font-bold text-white text-lg" data-i18n="step2_title">2. Inject Client
+                                        DNA</h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="step2_desc">Retrieve specific business
+                                        context (Policies, GL
+                                        Codes) for <span id="visualTenant"
+                                            class="text-cyan-400 font-mono">Tenant</span>.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Specialist -->
+                            <div class="relative z-10 flex items-center group flow-step" id="step3">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center flex-shrink-0 shadow-xl relative">
+                                    <i data-feather="users" class="text-slate-400 w-8 h-8"></i>
+                                    <div class="absolute -right-1 -top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 hidden"
+                                        id="step3-status"></div>
+                                </div>
+                                <div class="ml-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 w-full">
+                                    <h4 class="font-bold text-white text-lg" data-i18n="step3_title">3. Select Expert
+                                    </h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="step3_desc">Dynamic routing to <span
+                                            id="visualExpert" class="text-purple-400 font-mono">Generalist</span> Agent
+                                        with optimized
+                                        prompt chain.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Execution -->
+                            <div class="relative z-10 flex items-center group flow-step" id="step4">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center flex-shrink-0 shadow-xl relative">
+                                    <i data-feather="cpu" class="text-slate-400 w-8 h-8"></i>
+                                    <div class="absolute -right-1 -top-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800 hidden"
+                                        id="step4-status"></div>
+                                </div>
+                                <div class="ml-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 w-full">
+                                    <h4 class="font-bold text-white text-lg" data-i18n="step4_title">4. Orchestrate &
+                                        Govern</h4>
+                                    <p class="text-slate-400 text-sm" data-i18n="step4_desc">LLM Adapter processing.
+                                        Logging tokens, cost, and
+                                        latency.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Output -->
+                        <div id="finalOutput"
+                            class="mt-8 bg-slate-900 border border-slate-700 rounded-xl p-6 opacity-50 transition-all duration-500 transform translate-y-4">
+                            <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-2">
+                                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider"
+                                    data-i18n="sim_output_title">AI
+                                    Response</span>
+                                <div class="flex space-x-4 text-xs text-slate-500 font-mono">
+                                    <span id="statLatency">Latency: --ms</span>
+                                    <span id="statCost">Cost: $--</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-300 leading-relaxed font-mono text-sm" id="outputText"
+                                data-i18n="sim_waiting">Waiting for
+                                simulation...</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Steps & Principles -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-4" data-i18n="details_title">Step-by-Step Intelligence
+                    Orchestration</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="details_subtitle">A breakdown of the architecture
+                    that ensures reliability and
+                    scale.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors"
+                    data-aos="fade-up">
+                    <div
+                        class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                        <i data-feather="layers"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="detail1_title">1. ERP Context Selection
+                    </h3>
+                    <p class="text-slate-400" data-i18n="detail1_desc">The system adapts automatically to the user's
+                        role, module, and intent. No
+                        hardcoded prompts.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 text-cyan-400">
+                        <i data-feather="git-branch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="detail2_title">2. Dynamic Specialist
+                        Selection</h3>
+                    <p class="text-slate-400" data-i18n="detail2_desc">Each module maps to a specialized AI expert with
+                        its own prompt logic and
+                        versioning strategy.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 bg-pink-900/30 rounded-lg flex items-center justify-center mb-6 text-pink-400">
+                        <i data-feather="fingerprint"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="detail3_title">3. Client DNA Injection</h3>
+                    <p class="text-slate-400" data-i18n="detail3_desc">The response adapts to industry, profile, and
+                        operational reality — not
+                        just the question.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 text-blue-400">
+                        <i data-feather="sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="detail4_title">4. LLM Orchestration</h3>
+                    <p class="text-slate-400" data-i18n="detail4_desc">Routed through a resilient adapter layer designed
+                        for retries, rate
+                        limits, and provider abstraction.</p>
+                </div>
+
+                <div class="bg-slate-800/30 p-8 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 bg-green-900/30 rounded-lg flex items-center justify-center mb-6 text-green-400">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3" data-i18n="detail5_title">5. Governance by Design</h3>
+                    <p class="text-slate-400" data-i18n="detail5_desc">Every request tracked with token usage, estimated
+                        cost, and tenant quota
+                        enforcement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto md:flex md:items-center md:justify-between gap-12">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-white mb-6" data-i18n="why_title">Why This Matters</h2>
+                <p class="text-xl text-slate-300 mb-8 leading-relaxed" data-i18n="why_desc">
+                    Most AI initiatives fail not because of models — but because of architecture, governance, and
+                    scalability.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start text-slate-300">
+                        <i data-feather="check" class="text-green-400 mr-3 mt-1"></i>
+                        <span data-i18n="why_li1">Predictable costs</span>
+                    </li>
+                    <li class="flex items-start text-slate-300">
+                        <i data-feather="check" class="text-green-400 mr-3 mt-1"></i>
+                        <span data-i18n="why_li2">Consistent outputs</span>
+                    </li>
+                    <li class="flex items-start text-slate-300">
+                        <i data-feather="check" class="text-green-400 mr-3 mt-1"></i>
+                        <span data-i18n="why_li3">Clear ownership & auditability</span>
+                    </li>
+                    <li class="flex items-start text-slate-300">
+                        <i data-feather="check" class="text-green-400 mr-3 mt-1"></i>
+                        <span data-i18n="why_li4">Safe enterprise adoption</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <div
+                    class="bg-gradient-to-br from-purple-900/20 to-slate-900 border border-slate-700 rounded-2xl p-8 shadow-2xl relative">
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl"></div>
+                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="why_callout_title">Built for Scale, Not
+                        for Demos</h3>
+                    <p class="text-slate-400 mb-6" data-i18n="why_callout_desc">
+                        This architecture supports hundreds of ERP instances, multiple business domains, and prompt
+                        evolution over time.
+                    </p>
+                    <p class="text-slate-400 italic border-l-4 border-purple-500 pl-4" data-i18n="why_quote">
+                        "This is not experimentation. This is AI as infrastructure."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+        class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-900/80 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold text-white mb-6" data-i18n="cta_title">Want to build this for real?</h2>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto" data-i18n="cta_desc">
+                This Interactive Proof represents how dotSat7 designs and delivers production-ready AI platforms. If you
+                created a plan to add AI to your ERP, let's talk.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="index.html#contact"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 shadow-lg shadow-purple-500/30">
+                    <span data-i18n="cta_btn">Discuss Your AI Architecture</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 border-t border-slate-800 text-center">
+        <p class="text-slate-500 text-sm">© 2026 dotsat7. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Init Icons
+        feather.replace();
+        AOS.init({ once: true, duration: 800 });
+
+        // Translations
+        const translations = {
+            en: {
+                // Nav
+                "nav_services": "Services",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "How We Engage",
+                "nav_about": "About",
+                "nav_contact": "Contact",
+
+                // Hero
+                "hero_tag": "Interactive Proof: AI Hub for ERP Intelligence",
+                "hero_title": "See how enterprise-grade AI orchestration works — before you build it.",
+                "hero_subtitle": "Connect multiple ERP modules to a centralized AI Hub that dynamically selects specialists, injects client context, controls cost, and scales across tenants — all in real time.",
+                "hero_p2": "No chatbot. No black box. Just architecture you can trust.",
+                "hero_cta": "Run the Interactive Proof",
+
+                // Intro
+                "intro_title": "Most AI demos show outputs. <br>This Interactive Proof shows the system behind the intelligence.",
+                "intro_desc": "Here, you'll explore how an AI Hub orchestrates requests coming from ERP systems, applies business context, selects the right expert logic, and delivers governed AI responses at scale.",
+                "intro_italic": "Everything you see is simulated — but every design choice is production-grade.",
+
+                // Simulation
+                "sim_title": "Orchestration Workflow",
+                "sim_desc": "Construct a realistic ERP request and watch the AI Hub process it step-by-step.",
+                "sim_step1": "1. ERP Context Selection",
+                "sim_label_module": "ERP Module",
+                "sim_label_tenant": "Tenant ID",
+                "sim_label_intent": "User Intent",
+                "sim_btn_run": "Run Simulation",
+                "sim_logs_title": "// System Logs",
+                "sim_output_title": "AI Response",
+                "sim_waiting": "Waiting for simulation...",
+
+                // Steps
+                "step1_title": "1. Ingest Request",
+                "step1_desc": "ERP Module triggers webhook with Tenant ID & Payload.",
+                "step2_title": "2. Inject Client DNA",
+                "step2_desc": "Retrieve specific business context (Policies, GL Codes) for <span id='visualTenant' class='text-cyan-400 font-mono'>Tenant</span>.",
+                "step3_title": "3. Select Expert",
+                "step3_desc": "Dynamic routing to <span id='visualExpert' class='text-purple-400 font-mono'>Generalist</span> Agent with optimized prompt chain.",
+                "step4_title": "4. Orchestrate & Govern",
+                "step4_desc": "LLM Adapter processing. Logging tokens, cost, and latency.",
+
+                // Details
+                "details_title": "Step-by-Step Intelligence Orchestration",
+                "details_subtitle": "A breakdown of the architecture that ensures reliability and scale.",
+                "detail1_title": "1. ERP Context Selection",
+                "detail1_desc": "The system adapts automatically to the user's role, module, and intent. No hardcoded prompts.",
+                "detail2_title": "2. Dynamic Specialist Selection",
+                "detail2_desc": "Each module maps to a specialized AI expert with its own prompt logic and versioning strategy.",
+                "detail3_title": "3. Client DNA Injection",
+                "detail3_desc": "The response adapts to industry, profile, and operational reality — not just the question.",
+                "detail4_title": "4. LLM Orchestration",
+                "detail4_desc": "Routed through a resilient adapter layer designed for retries, rate limits, and provider abstraction.",
+                "detail5_title": "5. Governance by Design",
+                "detail5_desc": "Every request tracked with token usage, estimated cost, and tenant quota enforcement.",
+
+                // Why
+                "why_title": "Why This Matters",
+                "why_desc": "Most AI initiatives fail not because of models — but because of architecture, governance, and scalability.",
+                "why_li1": "Predictable costs",
+                "why_li2": "Consistent outputs",
+                "why_li3": "Clear ownership & auditability",
+                "why_li4": "Safe enterprise adoption",
+                "why_callout_title": "Built for Scale, Not for Demos",
+                "why_callout_desc": "This architecture supports hundreds of ERP instances, multiple business domains, and prompt evolution over time.",
+                "why_quote": "\"This is not experimentation. This is AI as infrastructure.\"",
+
+                // CTA
+                "cta_title": "Want to build this for real?",
+                "cta_desc": "This Interactive Proof represents how dotSat7 designs and delivers production-ready AI platforms. If you created a plan to add AI to your ERP, let's talk.",
+                "cta_btn": "Discuss Your AI Architecture"
+            },
+            pt: {
+                // Nav
+                "nav_services": "Serviços",
+                "nav_protovision": "ProtoVision",
+                "nav_pricing": "Como atuamos",
+                "nav_about": "Sobre",
+                "nav_contact": "Contato",
+
+                // Hero
+                "hero_tag": "Prova Interativa: Hub de IA para Inteligência de ERP",
+                "hero_title": "Veja como funciona a orquestração de IA empresarial — antes de construir.",
+                "hero_subtitle": "Conecte vários módulos de ERP a um Hub de IA centralizado que seleciona especialistas dinamicamente, injeta contexto do cliente, controla custos e escala entre locatários — tudo em tempo real.",
+                "hero_p2": "Sem chatbot genérico. Sem caixa preta. Apenas arquitetura em que você pode confiar.",
+                "hero_cta": "Rodar a Prova Interativa",
+
+                // Intro
+                "intro_title": "A maioria das demos de IA mostra apenas saídas. <br>Esta Prova Interativa mostra o sistema por trás da inteligência.",
+                "intro_desc": "Aqui, você explorará como um Hub de IA orquestra solicitações vindas de sistemas ERP, aplica contexto de negócios, seleciona a lógica especializada correta e entrega respostas de IA governadas em escala.",
+                "intro_italic": "Tudo o que você vê é simulado — mas cada escolha de design é de nível de produção.",
+
+                // Simulation
+                "sim_title": "Fluxo de Orquestração",
+                "sim_desc": "Construa uma solicitação de ERP realista e veja o Hub de IA processá-la passo a passo.",
+                "sim_step1": "1. Seleção de Contexto ERP",
+                "sim_label_module": "Módulo ERP",
+                "sim_label_tenant": "ID do Locatário (Tenant)",
+                "sim_label_intent": "Intenção do Usuário",
+                "sim_btn_run": "Executar Simulação",
+                "sim_logs_title": "// Logs do Sistema",
+                "sim_output_title": "Resposta da IA",
+                "sim_waiting": "Aguardando simulação...",
+
+                // Steps
+                "step1_title": "1. Ingerir Solicitação",
+                "step1_desc": "Módulo ERP aciona webhook com ID do Locatário e Payload.",
+                "step2_title": "2. Injetar DNA do Cliente",
+                "step2_desc": "Recuperar contexto de negócios específico (Políticas, Códigos Contábeis) para <span id='visualTenant' class='text-cyan-400 font-mono'>Locatário</span>.",
+                "step3_title": "3. Selecionar Especialista",
+                "step3_desc": "Roteamento dinâmico para Agente <span id='visualExpert' class='text-purple-400 font-mono'>Generalista</span> com cadeia de prompts otimizada.",
+                "step4_title": "4. Orquestrar e Governar",
+                "step4_desc": "Processamento do Adaptador LLM. Registrando tokens, custo e latência.",
+
+                // Details
+                "details_title": "Orquestração de Inteligência Passo a Passo",
+                "details_subtitle": "Um detalhamento da arquitetura que garante confiabilidade e escala.",
+                "detail1_title": "1. Seleção de Contexto ERP",
+                "detail1_desc": "O sistema se adapta automaticamente à função, módulo e intenção do usuário. Sem prompts hardcoded.",
+                "detail2_title": "2. Seleção Dinâmica de Especialistas",
+                "detail2_desc": "Cada módulo mapeia para um especialista em IA com sua própria lógica de prompt e estratégia de versionamento.",
+                "detail3_title": "3. Injeção de DNA do Cliente",
+                "detail3_desc": "A resposta se adapta à indústria, perfil e realidade operacional — não apenas à pergunta.",
+                "detail4_title": "4. Orquestração de LLM",
+                "detail4_desc": "Roteado através de uma camada de adaptador resiliente projetada para novas tentativas, limites de taxa e abstração de provedor.",
+                "detail5_title": "5. Governança por Design",
+                "detail5_desc": "Cada solicitação rastreada com uso de tokens, custo estimado e aplicação de cota de locatário.",
+
+                // Why
+                "why_title": "Por Que Isso Importa",
+                "why_desc": "A maioria das iniciativas de IA falha não por causa dos modelos — mas por causa de arquitetura, governança e escalabilidade.",
+                "why_li1": "Custos previsíveis",
+                "why_li2": "Saídas consistentes",
+                "why_li3": "Propriedade clara e auditabilidade",
+                "why_li4": "Adoção empresarial segura",
+                "why_callout_title": "Construído para Escala, Não para Demos",
+                "why_callout_desc": "Esta arquitetura suporta centenas de instâncias de ERP, múltiplos domínios de negócios e evolução de prompts ao longo do tempo.",
+                "why_quote": "\"Isso não é experimentação. Isso é IA como infraestrutura.\"",
+
+                // CTA
+                "cta_title": "Quer construir isso de verdade?",
+                "cta_desc": "Esta Prova Interativa representa como a dotSat7 projeta e entrega plataformas de IA prontas para produção. Se você criou um plano para adicionar IA ao seu ERP, vamos conversar.",
+                "cta_btn": "Discutir Sua Arquitetura de IA"
+            }
+        };
+
+        // Language Logic
+        function loadLanguage() {
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+            applyTranslations(lang);
+        }
+
+        function applyTranslations(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Check if the original content had HTML specific IDs we need to preserve or re-render
+                    // For this page, some keys have HTML like <br> or <span>. innerHTML is safe for these regulated strings.
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Load on start
+        loadLanguage();
+
+        // Simulation Logic
+        const logs = document.getElementById('logsContent');
+        const progressLine = document.getElementById('progressLine');
+        const outputBox = document.getElementById('finalOutput');
+        const outputText = document.getElementById('outputText');
+        const statLatency = document.getElementById('statLatency');
+        const statCost = document.getElementById('statCost');
+
+        function log(message, type = 'info') {
+            const time = new Date().toLocaleTimeString().split(' ')[0];
+            const div = document.createElement('div');
+            let color = 'text-slate-400';
+            if (type === 'success') color = 'text-green-400';
+            if (type === 'warn') color = 'text-yellow-400';
+            if (type === 'error') color = 'text-red-400';
+
+            div.className = `${color} font-mono text-xs border-l-2 border-slate-700 pl-2 py-1 mb-1 animate-fade-in`;
+            div.innerHTML = `<span class="opacity-50">[${time}]</span> ${message}`;
+
+            logs.appendChild(div);
+            // Auto scroll
+            document.getElementById('consoleLog').scrollTop = document.getElementById('consoleLog').scrollHeight;
+        }
+
+        async function runSimulation() {
+            // Reset state
+            logs.innerHTML = '';
+            document.querySelectorAll('.flow-step').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('[id$="-status"]').forEach(el => el.classList.add('hidden'));
+            progressLine.style.height = '0%';
+            outputBox.classList.add('opacity-50', 'translate-y-4');
+            outputBox.classList.remove('opacity-100', 'translate-y-0');
+            outputText.innerText = "Processing...";
+
+            // Get Inputs
+            const module = document.getElementById('moduleSelect').value;
+            const tenant = document.getElementById('tenantSelect').value;
+            const intent = document.getElementById('intentInput').value || "No intent provided"; // Default
+
+            // UI Updates
+            const tenantName = tenant === 'acme_corp' ? 'Acme Corp' : 'Start Inc';
+            const visualTenant = document.getElementById('visualTenant');
+            if (visualTenant) visualTenant.innerText = tenantName;
+
+            let expertName = "Generalist";
+            if (module === 'finance') expertName = "CPA Financial Analyst";
+            if (module === 'hr') expertName = "HR Policy Specialist";
+            if (module === 'supply') expertName = "Logistics Optimizer";
+
+            const visualExpert = document.getElementById('visualExpert');
+            if (visualExpert) visualExpert.innerText = expertName;
+
+            log(`Starting orchestration for Tenant: ${tenant}`, 'info');
+
+            // Step 1: Ingest
+            activateStep(1);
+            log(`[ERP_HOOK] Received event from Module: ${module}`, 'info');
+            await delay(800);
+            completeStep(1);
+            progressLine.style.height = '25%';
+
+            // Step 2: Context
+            activateStep(2);
+            log(`[CONTEXT_LOADER] Fetching cached policies for ${tenant}...`, 'warn');
+            await delay(1000);
+            log(`[CONTEXT_LOADER] Loaded 14KB of context (GL Codes, Budget Rules)`, 'success');
+            completeStep(2);
+            progressLine.style.height = '50%';
+
+            // Step 3: Specialist
+            activateStep(3);
+            log(`[ROUTER] Intent: "${intent.substring(0, 20)}..." maps to ${expertName}`, 'info');
+            await delay(800);
+            log(`[PROMPT_BUILDER] Assembling System Prompt v2.4`, 'success');
+            completeStep(3);
+            progressLine.style.height = '75%';
+
+            // Step 4: Execute
+            activateStep(4);
+            log(`[LLM_ADAPTER] Sending payload to Model: GPT-4o...`, 'warn');
+            await delay(1500);
+            log(`[GOVERNANACE] Quota check passed. Token usage logged.`, 'success');
+            completeStep(4);
+            progressLine.style.height = '100%';
+
+            // Finish
+            showOutput(module, intent);
+        }
+
+        function activateStep(num) {
+            const step = document.getElementById(`step${num}`);
+            if (step) {
+                step.classList.add('active');
+                step.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function completeStep(num) {
+            const status = document.getElementById(`step${num}-status`);
+            if (status) status.classList.remove('hidden');
+        }
+
+        function showOutput(module, intent) {
+            outputBox.classList.remove('opacity-50', 'translate-y-4');
+            outputBox.classList.add('opacity-100', 'translate-y-0');
+
+            // Mock Response Generation
+            let response = "";
+            let cost = 0;
+            const tenantName = document.getElementById('tenantSelect').value === 'acme_corp' ? 'Acme Corp' : 'Start Inc';
+
+            if (module === 'finance') {
+                response = `Based on the Q3 General Ledger data for ${tenantName}, travel expenses are 12% above budget ($45,200 vs $40,000 allocated). \n\nPrimary drivers included:\n- Last-minute flight bookings in August\n- Conference attendance in September.\n\nRecommendation: Review travel policy limits for Q4 to realign with annual targets.`;
+                cost = 0.04;
+            } else if (module === 'hr') {
+                response = `Analysis of payroll data indicates stable headcount, but overtime costs have increased by 8% month-over-month. \n\nPolicy Check: This is within the 10% variance threshold allowed by the '${tenantName}' handbook, but warrants monitoring.\n\nRecommended Action: Schedule review with department leads.`;
+                cost = 0.03;
+            } else {
+                response = `Supply chain metrics show a potential delay in raw material shipments from Region A. Inventory levels are currently sufficient for 14 days of production.\n\nSuggested Action: Initiate early re-order protocol to prevent stockout risks in Q4.`;
+                cost = 0.05;
+            }
+
+            outputText.innerText = response;
+            statLatency.innerText = `Latency: ${Math.floor(Math.random() * (1200 - 800) + 800)}ms`;
+            statCost.innerText = `Cost: $${cost}`;
+
+            log(`[COMPLETE] Response delivered to ERP Client.`, 'success');
+        }
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+    </script>
+</body>
+
+</html>
