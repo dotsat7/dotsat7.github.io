@@ -185,14 +185,14 @@
     </main>
 
     <!-- Architecture Modal -->
-    <div id="archModal" class="fixed inset-0 z-[60] hidden">
+    <div id="archModal" class="fixed inset-0 z-[60] hidden overflow-y-auto">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeArchModal()">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeArchModal()">
         </div>
 
         <!-- Modal Content -->
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl p-4">
-            <div class="glass-panel rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-600 relative">
+        <div class="min-h-full flex items-center justify-center p-4 py-12 relative z-10 w-full">
+            <div class="w-full max-w-4xl glass-panel rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-600 relative">
                 <button onclick="closeArchModal()"
                     class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
                     <i data-feather="x" class="w-6 h-6"></i>
@@ -205,7 +205,7 @@
 
                 <!-- Diagram Flow -->
                 <div class="relative overflow-x-auto pb-4">
-                    <div class="flex flex-col md:flex-row items-center justify-between min-w-[600px] gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row items-center justify-between md:min-w-[600px] gap-4 md:gap-0 w-full">
 
                         <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center group">

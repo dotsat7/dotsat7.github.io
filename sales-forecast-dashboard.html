@@ -95,7 +95,7 @@
                         Predictive analytics engine visualizing revenue trends and future projections.
                     </p>
                 </div>
-                <div class="mt-4 md:mt-0 flex gap-3 items-center">
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-3 items-center">
                     <button onclick="openArchModal()"
                         class="flex items-center px-4 py-2 bg-cyan-900/20 rounded-lg text-sm text-cyan-400 border border-cyan-500/50 hover:bg-cyan-900/40 transition-colors mr-2">
                         <i data-feather="layers" class="w-4 h-4 mr-2"></i>
@@ -172,14 +172,14 @@
     </main>
 
     <!-- Architecture Modal -->
-    <div id="archModal" class="fixed inset-0 z-[60] hidden">
+    <div id="archModal" class="fixed inset-0 z-[60] hidden overflow-y-auto">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeArchModal()">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeArchModal()">
         </div>
 
         <!-- Modal Content -->
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl p-4">
-            <div class="glass-panel rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-600 relative">
+        <div class="min-h-full flex items-center justify-center p-4 py-12 relative z-10 w-full">
+            <div class="w-full max-w-5xl glass-panel rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-600 relative">
                 <button onclick="closeArchModal()"
                     class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
                     <i data-feather="x" class="w-6 h-6"></i>
@@ -192,7 +192,7 @@
 
                 <!-- Diagram Flow -->
                 <div class="relative overflow-x-auto pb-4">
-                    <div class="flex flex-col md:flex-row items-center justify-between min-w-[700px] gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row items-center justify-between md:min-w-[700px] gap-4 md:gap-0 w-full">
 
                         <!-- Step 1 -->
                         <div class="flex flex-col items-center text-center group">
